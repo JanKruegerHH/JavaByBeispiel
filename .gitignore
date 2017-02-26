@@ -1,0 +1,10 @@
+**/.idea/
+**/*.iml
+**/.project
+**/.classpath
+**/.settings
+**/.pmd
+**/.pmdruleset.xml
+**/target/
+**/test-output/
+
