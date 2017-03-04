@@ -12,9 +12,9 @@ public class AppleFactory {
 
         List<Apple> result = new ArrayList<>();
 
+        result.add(new Apple(200,"green"));
         result.add(new Apple(100,"red"));
         result.add(new Apple(200,"yellow"));
-        result.add(new Apple(200,"green"));
 
         return result;
     }

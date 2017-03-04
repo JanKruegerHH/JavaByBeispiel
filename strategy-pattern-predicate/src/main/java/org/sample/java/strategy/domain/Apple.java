@@ -1,5 +1,7 @@
 package org.sample.java.strategy.domain;
 
+import java.util.Comparator;
+
 public class Apple {
 
     private int weight;
@@ -10,11 +12,11 @@ public class Apple {
         this.color = color;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
     }
 
@@ -25,4 +27,13 @@ public class Apple {
     public void setColor(String color) {
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "Apple{" +
+                "weight=" + weight +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
 }
