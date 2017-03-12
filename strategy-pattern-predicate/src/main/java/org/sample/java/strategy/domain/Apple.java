@@ -1,7 +1,5 @@
 package org.sample.java.strategy.domain;
 
-import java.util.Comparator;
-
 public class Apple {
 
     private int weight;

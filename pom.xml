@@ -11,8 +11,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>lambda-expressions</module>
         <module>strategy-pattern-predicate</module>
+        <module>lambda-expressions</module>
     </modules>
 
     <properties>

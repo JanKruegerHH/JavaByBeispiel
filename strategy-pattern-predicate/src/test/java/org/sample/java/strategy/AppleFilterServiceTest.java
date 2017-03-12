@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class AppleFilterServiceTest {
 
     @Test
-    void testFilterAppleGreen() {
+    void filterAppleGreenTest() {
 
         List<Apple> appleList = AppleFactory.createAppleList();
         assertEquals(appleList.size(), 3);
@@ -26,7 +26,7 @@ public class AppleFilterServiceTest {
     }
 
     @Test
-    void testFilterAppleHeavy() {
+    void filterAppleHeavyTest() {
 
         List<Apple> appleList = AppleFactory.createAppleList();
         assertEquals(appleList.size(), 3);
