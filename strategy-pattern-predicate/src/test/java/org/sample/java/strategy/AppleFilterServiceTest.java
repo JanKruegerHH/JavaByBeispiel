@@ -1,6 +1,5 @@
 package org.sample.java.strategy;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.sample.java.strategy.domain.Apple;
 

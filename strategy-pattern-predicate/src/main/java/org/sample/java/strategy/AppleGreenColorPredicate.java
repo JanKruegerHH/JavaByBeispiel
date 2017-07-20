@@ -2,7 +2,9 @@ package org.sample.java.strategy;
 
 import org.sample.java.strategy.domain.Apple;
 
-public class AppleGreenColorPredicate implements ApplePredicate {
+import java.util.function.Predicate;
+
+public class AppleGreenColorPredicate implements Predicate<Apple> {
 
     @Override
     public boolean test(Apple apple) {
