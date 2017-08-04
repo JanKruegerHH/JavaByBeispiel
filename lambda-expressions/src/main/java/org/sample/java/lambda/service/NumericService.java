@@ -1,4 +1,6 @@
-package org.sample.java.lambda.simple;
+package org.sample.java.lambda.service;
+
+import org.sample.java.lambda.function.NumericFunction;
 
 public class NumericService {
 

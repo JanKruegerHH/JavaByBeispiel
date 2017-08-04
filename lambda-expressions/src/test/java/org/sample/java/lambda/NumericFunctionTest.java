@@ -1,6 +1,8 @@
-package org.sample.java.lambda.simple;
+package org.sample.java.lambda;
 
 import org.junit.jupiter.api.Test;
+import org.sample.java.lambda.function.NumericFunction;
+import org.sample.java.lambda.service.NumericService;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

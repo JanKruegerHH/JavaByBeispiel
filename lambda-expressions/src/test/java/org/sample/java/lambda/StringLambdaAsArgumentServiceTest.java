@@ -1,6 +1,7 @@
-package org.sample.java.lambda.simple;
+package org.sample.java.lambda;
 
 import org.junit.jupiter.api.Test;
+import org.sample.java.lambda.service.StringLambdaAsArgumentService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;

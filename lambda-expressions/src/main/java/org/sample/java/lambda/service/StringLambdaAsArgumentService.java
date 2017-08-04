@@ -1,4 +1,6 @@
-package org.sample.java.lambda.simple;
+package org.sample.java.lambda.service;
+
+import org.sample.java.lambda.function.StringFunction;
 
 public class StringLambdaAsArgumentService {
 
@@ -6,14 +8,14 @@ public class StringLambdaAsArgumentService {
         return stringFunction.func(string);
     }
 
-    static String changeToUppercase(String in) {
+    public static String changeToUppercase(String in) {
 
         // return stringOperation((str) -> str.toUpperCase(), in);
         // use Method-Reference
         return stringOperation(String::toUpperCase, in);
     }
 
-    static String removeSpaces(String in) {
+    public static String removeSpaces(String in) {
 
         String result;
 
@@ -28,7 +30,7 @@ public class StringLambdaAsArgumentService {
         return result;
     }
 
-    static String reverseStringStatic(String in) {
+    public static String reverseStringStatic(String in) {
 
         StringFunction reverse = (str) -> {
             String result = "";

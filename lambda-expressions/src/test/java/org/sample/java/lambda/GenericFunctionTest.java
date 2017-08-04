@@ -1,6 +1,7 @@
-package org.sample.java.lambda.simple;
+package org.sample.java.lambda;
 
 import org.junit.jupiter.api.Test;
+import org.sample.java.lambda.function.GenericFunction;
 
 import static org.junit.jupiter.api.Assertions.*;
 
