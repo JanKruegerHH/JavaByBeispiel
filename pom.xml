@@ -13,14 +13,18 @@
     <modules>
         <module>strategy-pattern-predicate</module>
         <module>lambda-expressions</module>
+        <module>lambda-comparators</module>
     </modules>
 
     <properties>
         <jdk.version>1.8</jdk.version>
-        <junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
-        <junit.platform.version>1.0.0-M4</junit.platform.version>
+        <junit.jupiter.version>5.0.0-RC2</junit.jupiter.version>
+        <junit.platform.version>1.0.0-RC2</junit.platform.version>
+        <logback.version>1.2.3</logback.version>
+        <lombok.version>1.16.18</lombok.version>
         <maven.compiler.plugin.version>3.5</maven.compiler.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sl4j.version>1.7.25</sl4j.version>
     </properties>
 
     <build>
@@ -50,6 +54,21 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${sl4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
