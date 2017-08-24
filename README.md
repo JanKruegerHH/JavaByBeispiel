@@ -29,6 +29,7 @@ Status: ok
 
 ## todos
 Lambda u. Comparators
+Reactive Programming s. https://dzone.com/articles/rxjava-part-1-a-quick-introduction
 
 Streams:
 https://dzone.com/articles/dipping-into-java-8-streams?edition=265888&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-29
