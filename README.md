@@ -30,6 +30,8 @@ Status: ok
 ## todos
 Lambda u. Comparators
 Reactive Programming s. https://dzone.com/articles/rxjava-part-1-a-quick-introduction
+Enums & Validation: https://dzone.com/articles/validations-using-enum?edition=235182&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-25
+OpenAPI Teil 1 und Teil 2: https://www.javaworld.com/article/3199351/application-development/api-driven-development-with-openapi-and-swagger.html?nsdr=true&cid=jw_nlt_javaworld_weekly_2017-10-11&page=2
 
 Streams:
 https://dzone.com/articles/dipping-into-java-8-streams?edition=265888&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-29
