@@ -31,6 +31,8 @@ Status: ok
 Project streams shows
 - the use of stream, e.g. filter, maps, reduce and sort
 
+Status: ok
+
 ## todos
 http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/
 
