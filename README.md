@@ -42,9 +42,6 @@ OpenAPI Teil 1 und Teil 2: https://www.javaworld.com/article/3199351/application
 
 s.a. 
 CoreJavaAdvancedFeatures-10thEd-2015
-- Streams
-Java8Features-2016
-- Streams
 - Optional
 
 Data Structures in Java
