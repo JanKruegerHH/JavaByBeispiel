@@ -14,12 +14,13 @@
         <module>strategy-pattern-predicate</module>
         <module>lambda-expressions</module>
         <module>lambda-comparators</module>
+        <module>streams</module>
     </modules>
 
     <properties>
         <jdk.version>1.8</jdk.version>
-        <junit.jupiter.version>5.0.0-RC2</junit.jupiter.version>
-        <junit.platform.version>1.0.0-RC2</junit.platform.version>
+        <junit.jupiter.version>5.0.2</junit.jupiter.version>
+        <junit.platform.version>1.0.2</junit.platform.version>
         <logback.version>1.2.3</logback.version>
         <lombok.version>1.16.18</lombok.version>
         <maven.compiler.plugin.version>3.5</maven.compiler.plugin.version>
