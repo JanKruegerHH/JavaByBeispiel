@@ -36,7 +36,14 @@ Status: ok
 ## todos
 http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/
 
-Reactive Programming s. https://dzone.com/articles/rxjava-part-1-a-quick-introduction
+Spring Boot Swagger
+https://github.com/springframeworkguru/springboot_swagger_example
+Spring Swagger Open API, Teil I. u. II.
+https://www.javaworld.com/article/3199351/application-development/api-driven-development-with-openapi-and-swagger.html
+
+Reactive Programming s. https://dzone.com/articles/rxjava-part-1-a-quick-introduction 
+oder https://dzone.com/articles/deal-with-hot-observables-in-a-web-ui?edition=337908&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-25
+(das Beispiel evtl. mit Angular implementieren?)
 
 Enums & Validation: https://dzone.com/articles/validations-using-enum?edition=235182&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-25
 
