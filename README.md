@@ -40,6 +40,9 @@ Spring Boot Swagger
 https://github.com/springframeworkguru/springboot_swagger_example
 Spring Swagger Open API, Teil I. u. II.
 https://www.javaworld.com/article/3199351/application-development/api-driven-development-with-openapi-and-swagger.html
+oder
+http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api?utm_source=email&utm_medium=email&utm_campaign=series1-rest&tl_inbound=1&tl_target_all=1&tl_period_type=3
+
 
 Reactive Programming s. https://dzone.com/articles/rxjava-part-1-a-quick-introduction 
 oder https://dzone.com/articles/deal-with-hot-observables-in-a-web-ui?edition=337908&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-25
