@@ -7,4 +7,6 @@
 **/.pmdruleset.xml
 **/target/
 **/test-output/
+**/generated/
+**/db/
 

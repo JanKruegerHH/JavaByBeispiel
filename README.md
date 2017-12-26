@@ -33,6 +33,17 @@ Project streams shows
 
 Status: ok
 
+#### vert.x
+Project vert.x show
+- the use of Verticles
+
+see https://github.com/vert-x3/vertx-guide-for-java-devs/tree/master/step-9
+
+see also 
+http://vertx.io/docs/guide-for-java-devs/
+https://github.com/vert-x3/vertx-guide-for-java-devs
+(https://github.com/benorama/ngrx-realtime-app, https://github.com/vert-x3/vertx-examples) 
+
 ## todos
 http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/
 
