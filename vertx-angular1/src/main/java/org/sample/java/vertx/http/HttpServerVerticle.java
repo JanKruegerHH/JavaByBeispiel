@@ -23,15 +23,17 @@ import java.util.Arrays;
 
 public class HttpServerVerticle extends AbstractVerticle {
 
-    public static final String CONFIG_HTTP_SERVER_PORT = "http.server.port";
-    public static final String CONFIG_WIKIDB_QUEUE = "wikidb.queue";
-
     private static final Logger LOGGER = LoggerFactory.getLogger(HttpServerVerticle.class);
+
+    private static final String CONFIG_HTTP_SERVER_PORT = "http.server.port";
+    private static final String CONFIG_WIKIDB_QUEUE = "wikidb.queue";
 
     private WikiDatabaseService dbService;
 
     @Override
     public void start(Future<Void> startFuture) throws Exception {
+
+        LOGGER.info("Start it...");
 
         String wikiDbQueue = config().getString(CONFIG_WIKIDB_QUEUE, "wikidb.queue");
         dbService = org.sample.java.vertx.database.WikiDatabaseService.createProxy(vertx.getDelegate(), wikiDbQueue);
@@ -44,12 +46,9 @@ public class HttpServerVerticle extends AbstractVerticle {
         router.route().handler(BodyHandler.create());
         router.route().handler(SessionHandler.create(LocalSessionStore.create(vertx)));
 
-        // tag::static-assets[]
         router.get("/app/*").handler(StaticHandler.create().setCachingEnabled(false)); // <1> <2>
         router.get("/").handler(context -> context.reroute("/app/index.html"));
-        // end::static-assets[]
 
-        // tag::preview-rendering[]
         router.post("/app/markdown").handler(context -> {
             String html = Processor.process(context.getBodyAsString());
             context.response()
@@ -57,9 +56,7 @@ public class HttpServerVerticle extends AbstractVerticle {
                     .setStatusCode(200)
                     .end(html);
         });
-        // end::preview-rendering[]
 
-        // tag::routes[]
         router.get("/api/pages").handler(this::apiRoot);
         router.get("/api/pages/:id").handler(this::apiGetPage);
         router.post().handler(BodyHandler.create());
@@ -67,7 +64,6 @@ public class HttpServerVerticle extends AbstractVerticle {
         router.put().handler(BodyHandler.create());
         router.put("/api/pages/:id").handler(this::apiUpdatePage);
         router.delete("/api/pages/:id").handler(this::apiDeletePage);
-        // end::routes[]
 
         int portNumber = config().getInteger(CONFIG_HTTP_SERVER_PORT, 8080);
         server
@@ -123,6 +119,7 @@ public class HttpServerVerticle extends AbstractVerticle {
         dbService.rxCreatePage(page.getString("name"), page.getString("markdown")).subscribe(
                 v -> apiResponse(context, 201, null, null),
                 t -> apiFailure(context, t));
+        LOGGER.info("Create Page: "+page.getString("name"));
     }
 
     private void apiGetPage(RoutingContext context) {

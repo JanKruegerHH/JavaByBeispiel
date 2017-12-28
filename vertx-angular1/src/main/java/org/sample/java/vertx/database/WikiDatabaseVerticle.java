@@ -5,6 +5,9 @@ import io.vertx.core.Future;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.jdbc.JDBCClient;
 import io.vertx.serviceproxy.ProxyHelper;
+import org.sample.java.vertx.MainVerticle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,14 +17,18 @@ import java.util.Properties;
 
 public class WikiDatabaseVerticle extends AbstractVerticle {
 
-    public static final String CONFIG_WIKIDB_JDBC_URL = "wikidb.jdbc.url";
-    public static final String CONFIG_WIKIDB_JDBC_DRIVER_CLASS = "wikidb.jdbc.driver_class";
-    public static final String CONFIG_WIKIDB_JDBC_MAX_POOL_SIZE = "wikidb.jdbc.max_pool_size";
-    public static final String CONFIG_WIKIDB_SQL_QUERIES_RESOURCE_FILE = "wikidb.sqlqueries.resource.file";
-    public static final String CONFIG_WIKIDB_QUEUE = "wikidb.queue";
+    private static final Logger LOGGER = LoggerFactory.getLogger(WikiDatabaseVerticle.class);
+
+    private static final String CONFIG_WIKIDB_JDBC_URL = "wikidb.jdbc.url";
+    private static final String CONFIG_WIKIDB_JDBC_DRIVER_CLASS = "wikidb.jdbc.driver_class";
+    private static final String CONFIG_WIKIDB_JDBC_MAX_POOL_SIZE = "wikidb.jdbc.max_pool_size";
+    private static final String CONFIG_WIKIDB_SQL_QUERIES_RESOURCE_FILE = "wikidb.sqlqueries.resource.file";
+    private static final String CONFIG_WIKIDB_QUEUE = "wikidb.queue";
 
     @Override
     public void start(Future<Void> startFuture) throws Exception {
+
+        LOGGER.info("Start it...");
 
         HashMap<SqlQuery, String> sqlQueries = loadSqlQueries();
 
