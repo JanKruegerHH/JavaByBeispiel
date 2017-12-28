@@ -15,7 +15,7 @@
         <module>lambda-expressions</module>
         <module>lambda-comparators</module>
         <module>streams</module>
-        <module>vertx</module>
+        <module>vertx-angular1</module>
     </modules>
 
     <properties>
