@@ -1,12 +1,12 @@
 package org.sample.java.vertx.http;
 
+
 import com.github.rjeschke.txtmark.Processor;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import org.sample.java.vertx.database.rxjava.WikiDatabaseService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.vertx.ext.web.handler.sockjs.BridgeOptions;
+import io.vertx.ext.web.handler.sockjs.PermittedOptions;
 import io.vertx.rxjava.core.AbstractVerticle;
 import io.vertx.rxjava.core.http.HttpServer;
 import io.vertx.rxjava.ext.web.Router;
@@ -15,8 +15,11 @@ import io.vertx.rxjava.ext.web.handler.BodyHandler;
 import io.vertx.rxjava.ext.web.handler.CookieHandler;
 import io.vertx.rxjava.ext.web.handler.SessionHandler;
 import io.vertx.rxjava.ext.web.handler.StaticHandler;
+import io.vertx.rxjava.ext.web.handler.sockjs.SockJSHandler;
 import io.vertx.rxjava.ext.web.sstore.LocalSessionStore;
-import io.vertx.rxjava.ext.web.templ.FreeMarkerTemplateEngine;
+import org.sample.java.vertx.database.rxjava.WikiDatabaseService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import rx.Observable;
 
 import java.util.Arrays;
@@ -46,16 +49,32 @@ public class HttpServerVerticle extends AbstractVerticle {
         router.route().handler(BodyHandler.create());
         router.route().handler(SessionHandler.create(LocalSessionStore.create(vertx)));
 
+        // tag::sockjs-handler-setup[]
+        SockJSHandler sockJSHandler = SockJSHandler.create(vertx); // <1>
+        BridgeOptions bridgeOptions = new BridgeOptions()
+                .addInboundPermitted(new PermittedOptions().setAddress("app.markdown"))  // <2>
+                .addOutboundPermitted(new PermittedOptions().setAddress("page.saved")); // <3>
+        sockJSHandler.bridge(bridgeOptions); // <4>
+        router.route("/eventbus/*").handler(sockJSHandler); // <5>
+        // end::sockjs-handler-setup[]
+
+        // tag::eventbus-markdown-consumer[]
+        vertx.eventBus().<String>consumer("app.markdown", msg -> {
+            String html = Processor.process(msg.body());
+            msg.reply(html);
+        });
+        // end::eventbus-markdown-consumer[]
+
         router.get("/app/*").handler(StaticHandler.create().setCachingEnabled(false)); // <1> <2>
         router.get("/").handler(context -> context.reroute("/app/index.html"));
 
-        router.post("/app/markdown").handler(context -> {
-            String html = Processor.process(context.getBodyAsString());
-            context.response()
-                    .putHeader("Content-Type", "text/html")
-                    .setStatusCode(200)
-                    .end(html);
-        });
+//        router.post("/app/markdown").handler(context -> {
+//            String html = Processor.process(context.getBodyAsString());
+//            context.response()
+//                    .putHeader("Content-Type", "text/html")
+//                    .setStatusCode(200)
+//                    .end(html);
+//        });
 
         router.get("/api/pages").handler(this::apiRoot);
         router.get("/api/pages/:id").handler(this::apiGetPage);
@@ -92,9 +111,21 @@ public class HttpServerVerticle extends AbstractVerticle {
         if (!validateJsonPageDocument(context, page, "markdown")) {
             return;
         }
-        dbService.rxSavePage(id, page.getString("markdown")).subscribe(
-                v -> apiResponse(context, 200, null, null),
-                t -> apiFailure(context, t));
+        // tag::publish-on-page-updated[]
+        dbService.rxSavePage(id, page.getString("markdown"))
+                .doOnSuccess(v -> { // <1>
+                    JsonObject event = new JsonObject()
+                            .put("id", id) // <2>
+                            .put("client", page.getString("client")); // <3>
+                    vertx.eventBus().publish("page.saved", event); // <4>
+                    LOGGER.info("Publish on Eventbus {}", event);
+                })
+                .subscribe(v -> apiResponse(context, 200, null, null), t -> apiFailure(context, t));
+        // end::publish-on-page-updated[]
+
+//        dbService.rxSavePage(id, page.getString("markdown")).subscribe(
+//                v -> apiResponse(context, 200, null, null),
+//                t -> apiFailure(context, t));
     }
     // end::apiUpdatePage[]
 
@@ -119,7 +150,7 @@ public class HttpServerVerticle extends AbstractVerticle {
         dbService.rxCreatePage(page.getString("name"), page.getString("markdown")).subscribe(
                 v -> apiResponse(context, 201, null, null),
                 t -> apiFailure(context, t));
-        LOGGER.info("Create Page: "+page.getString("name"));
+        LOGGER.info("Create Page: " + page.getString("name"));
     }
 
     private void apiGetPage(RoutingContext context) {
@@ -170,6 +201,5 @@ public class HttpServerVerticle extends AbstractVerticle {
                 .put("success", false)
                 .put("error", error).encode());
     }
-
 
 }

@@ -54,6 +54,7 @@ https://github.com/vert-x3/vertx-guide-for-java-devs \
 Todos:
 - Lombok funktioniert nicht?
 - Dependency Management? in parent pom???
+- einige Klassen sind deprecated z.B. in HttpServerVerticle
 
 Status: to be finished 
 

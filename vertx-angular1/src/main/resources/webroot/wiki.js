@@ -1,6 +1,17 @@
 // tag::module-decl[]
 'use strict';
 
+// Adapted from https://stackoverflow.com/a/8809472/2133695
+// Not a perfect GUID generator but good enough for the purpose of this demo
+function generateUUID() {
+    var d = new Date().getTime();
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+}
+
 angular.module("wikiApp", [])
   .controller("WikiController", ["$scope", "$http", "$timeout", function ($scope, $http, $timeout) {
 
@@ -62,6 +73,7 @@ angular.module("wikiApp", [])
         });
       } else {
         var payload = {
+          "client": clientUuid,
           "markdown": $scope.pageMarkdown
         };
         $http.put("/api/pages/" + $scope.pageId, payload).then(function(ok) {
@@ -110,19 +122,59 @@ angular.module("wikiApp", [])
     $scope.newPage();
     // end::init[]
 
-    // tag::live-rendering[]
-    var markdownRenderingPromise = null;
-    $scope.$watch("pageMarkdown", function(text) {  // <1>
-      if (markdownRenderingPromise !== null) {
-        $timeout.cancel(markdownRenderingPromise);  // <3>
-      }
-      markdownRenderingPromise = $timeout(function() {
-        markdownRenderingPromise = null;
-        $http.post("/app/markdown", text).then(function(response) { // <4>
-          $scope.updateRendering(response.data);
-        });
-      }, 300); // <2>
-    });
-    // end::live-rendering[]
+    // // tag::live-rendering[]
+    // var markdownRenderingPromise = null;
+    // $scope.$watch("pageMarkdown", function(text) {  // <1>
+    //   if (markdownRenderingPromise !== null) {
+    //     $timeout.cancel(markdownRenderingPromise);  // <3>
+    //   }
+    //   markdownRenderingPromise = $timeout(function() {
+    //     markdownRenderingPromise = null;
+    //     $http.post("/app/markdown", text).then(function(response) { // <4>
+    //       $scope.updateRendering(response.data);
+    //     });
+    //   }, 300); // <2>
+    // });
+    // // end::live-rendering[]
+
+      var markdownRenderingPromise = null;
+      $scope.$watch("pageMarkdown", function (text) {
+          if (eb.state !== EventBus.OPEN) return;
+          if (markdownRenderingPromise !== null) {
+              $timeout.cancel(markdownRenderingPromise);
+          }
+          markdownRenderingPromise = $timeout(function() {
+              markdownRenderingPromise = null;
+              // tag::eventbus-markdown-sender[]
+              eb.send("app.markdown", text, function (err, reply) { // <1>
+                  if (err === null) {
+                      $scope.$apply(function () { // <2>
+                          $scope.updateRendering(reply.body); // <3>
+                      });
+                  } else {
+                      console.warn("Error rendering Markdown content: " + JSON.stringify(err));
+                  }
+              });
+              // end::eventbus-markdown-sender[]
+          }, 300);
+      });
+
+      // tag::event-bus-js-setup[]
+      var eb = new EventBus(window.location.protocol + "//" + window.location.host + "/eventbus");
+      // end::event-bus-js-setup[]
+      // tag::register-page-saved-handler[]
+      var clientUuid = generateUUID(); // <1>
+      eb.onopen = function () {
+          eb.registerHandler("page.saved", function (error, message) { // <2>
+              if (message.body // <3>
+                  && $scope.pageId === message.body.id // <4>
+                  && clientUuid !== message.body.client) { // <5>
+                  $scope.$apply(function () { // <6>
+                      $scope.pageModified = true; // <7>
+                  });
+              }
+          });
+      };
+      // end::register-page-saved-handler[]
 
   }]);
