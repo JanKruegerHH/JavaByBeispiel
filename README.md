@@ -49,9 +49,11 @@ see https://github.com/vert-x3/vertx-guide-for-java-devs/tree/master/step-9
 see also 
 http://vertx.io/docs/guide-for-java-devs/ \
 https://github.com/vert-x3/vertx-guide-for-java-devs \
+http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/ \
 (https://github.com/benorama/ngrx-realtime-app https://github.com/vert-x3/vertx-examples)
 
 Todos:
+- wie wird der Web-Client eigentlich ganau an dem Bus registriert??
 - Lombok funktioniert nicht?
 - Dependency Management? in parent pom???
 - einige Klassen sind deprecated z.B. in HttpServerVerticle
@@ -59,14 +61,14 @@ Todos:
 Status: to be finished 
 
 ## todos
-http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/
-
 Spring Boot Swagger
 https://github.com/springframeworkguru/springboot_swagger_example
 Spring Swagger Open API, Teil I. u. II.
 https://www.javaworld.com/article/3199351/application-development/api-driven-development-with-openapi-and-swagger.html
 oder
 http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api?utm_source=email&utm_medium=email&utm_campaign=series1-rest&tl_inbound=1&tl_target_all=1&tl_period_type=3
+s.a. https://www.infoq.com/articles/Microservices-SpringBoot?utm_source=notification_email&utm_campaign=notifications&utm_medium=link&utm_content=content_in_followed_topic&utm_term=daily
+
 
 
 Reactive Programming s. https://dzone.com/articles/rxjava-part-1-a-quick-introduction 
