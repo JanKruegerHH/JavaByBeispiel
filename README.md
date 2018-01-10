@@ -105,7 +105,7 @@ Status: to be finished
 - Spring Boot Swagger
 https://github.com/springframeworkguru/springboot_swagger_example
 Spring Swagger Open API, Teil I. u. II.
-https://www.javaworld.com/article/3199351/application-development/api-driven-development-with-openapi-and-swagger.html
+https://www.javaworld.com/article/3199351/application-development/api-driven-development-with-openapi-and-swagger.html und https://www.javaworld.com/article/3199190/apis/programming-with-java-apis-part-2-api-definitions.html?cid=jw_nlt_javaworld_weekly_2018-01-09
 oder
 http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api?utm_source=email&utm_medium=email&utm_campaign=series1-rest&tl_inbound=1&tl_target_all=1&tl_period_type=3
 s.a. https://www.infoq.com/articles/Microservices-SpringBoot?utm_source=notification_email&utm_campaign=notifications&utm_medium=link&utm_content=content_in_followed_topic&utm_term=daily
