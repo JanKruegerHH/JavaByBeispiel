@@ -102,15 +102,11 @@ Status: to be finished
 
 
 ## todos
-- Spring Boot Swagger
-https://github.com/springframeworkguru/springboot_swagger_example
-Spring Swagger Open API, Teil I. u. II.
-https://www.javaworld.com/article/3199351/application-development/api-driven-development-with-openapi-and-swagger.html und https://www.javaworld.com/article/3199190/apis/programming-with-java-apis-part-2-api-definitions.html?cid=jw_nlt_javaworld_weekly_2018-01-09
-oder
-http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api?utm_source=email&utm_medium=email&utm_campaign=series1-rest&tl_inbound=1&tl_target_all=1&tl_period_type=3
-s.a. https://www.infoq.com/articles/Microservices-SpringBoot?utm_source=notification_email&utm_campaign=notifications&utm_medium=link&utm_content=content_in_followed_topic&utm_term=daily
-oder 
+- Spring Boot MicroServices with Consul (Registry)
 https://www.infoq.com/articles/Microservices-SpringBoot?utm_source=notification_email&utm_campaign=notifications&utm_medium=link&utm_content=content_in_followed_topic&utm_term=daily
+
+- Spring Boot und Prometheus
+https://aboullaite.me/spring-boot-monitoring-prometheus-grafana/
 
 - Streams and Splitter Sample, s. Mail 1.1.2018
 
@@ -119,8 +115,6 @@ oder https://dzone.com/articles/deal-with-hot-observables-in-a-web-ui?edition=33
 (das Beispiel evtl. mit Angular implementieren?)
 
 - Enums & Validation: https://dzone.com/articles/validations-using-enum?edition=235182&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-25
-
-- OpenAPI Teil 1 und Teil 2: https://www.javaworld.com/article/3199351/application-development/api-driven-development-with-openapi-and-swagger.html?nsdr=true&cid=jw_nlt_javaworld_weekly_2017-10-11&page=2
 
 - CoreJavaAdvancedFeatures-10thEd-2015 -> Optional
 
