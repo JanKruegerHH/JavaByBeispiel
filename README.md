@@ -102,6 +102,16 @@ Status: to be finished
 
 
 ## todos
+- Reactive Programming
+see Samples in http://www.javamagazine.mozaicreader.com/JanFeb2018#&pageSet=0&page=0&contentItem=0 
+    start with Spring Boot Reactor Sample using MongoDB
+    see CQRS Kafka Sample    
+see https://dzone.com/articles/rxjava-part-1-a-quick-introduction 
+oder https://dzone.com/articles/deal-with-hot-observables-in-a-web-ui?edition=337908&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-25
+(das Beispiel evtl. mit Angular implementieren?)
+
+- jdepend: or FitnessTest, in Tests the dependencies between packages should be verified! 
+
 - Spring Boot MicroServices with Consul (Registry)
 https://www.infoq.com/articles/Microservices-SpringBoot?utm_source=notification_email&utm_campaign=notifications&utm_medium=link&utm_content=content_in_followed_topic&utm_term=daily
 
@@ -109,10 +119,6 @@ https://www.infoq.com/articles/Microservices-SpringBoot?utm_source=notification_
 https://aboullaite.me/spring-boot-monitoring-prometheus-grafana/
 
 - Streams and Splitter Sample, s. Mail 1.1.2018
-
-- Reactive Programming s. https://dzone.com/articles/rxjava-part-1-a-quick-introduction 
-oder https://dzone.com/articles/deal-with-hot-observables-in-a-web-ui?edition=337908&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-25
-(das Beispiel evtl. mit Angular implementieren?)
 
 - Enums & Validation: https://dzone.com/articles/validations-using-enum?edition=235182&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-25
 
