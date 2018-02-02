@@ -110,6 +110,8 @@ see https://dzone.com/articles/rxjava-part-1-a-quick-introduction
 oder https://dzone.com/articles/deal-with-hot-observables-in-a-web-ui?edition=337908&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-25
 (das Beispiel evtl. mit Angular implementieren?)
 
+- Circut Breaker Pattern see https://spring.io/guides/gs/circuit-breaker/
+
 - jdepend: or FitnessTest, in Tests the dependencies between packages should be verified! 
 
 - Spring Boot MicroServices with Consul (Registry)
