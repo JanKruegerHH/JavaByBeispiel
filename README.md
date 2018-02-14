@@ -110,10 +110,11 @@ see https://dzone.com/articles/rxjava-part-1-a-quick-introduction
 oder https://dzone.com/articles/deal-with-hot-observables-in-a-web-ui?edition=337908&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-25
 (das Beispiel evtl. mit Angular implementieren?)
 
-- Reactive & Java 9
+- Reactive and Java 9
 https://aboullaite.me/reactive-streams-example-java-9/?elq_mid=102312&sh=17261316962220229152411102214&cmid=WWMK170418P00047    
 
 - Java 9 u. Modules
+implement a sample
 
 - Circut Breaker Pattern see https://spring.io/guides/gs/circuit-breaker/
 
