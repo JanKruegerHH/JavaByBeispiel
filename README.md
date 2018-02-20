@@ -109,12 +109,14 @@ see Samples in http://www.javamagazine.mozaicreader.com/JanFeb2018#&pageSet=0&pa
 see https://dzone.com/articles/rxjava-part-1-a-quick-introduction 
 oder https://dzone.com/articles/deal-with-hot-observables-in-a-web-ui?edition=337908&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-25
 (das Beispiel evtl. mit Angular implementieren?)
+see https://www.infoq.com/articles/Designing-Implementing-Using-Reactive-APIs?utm_source=notification_email&utm_campaign=notifications&utm_medium=link&utm_content=content_in_followed_topic&utm_term=daily
 
 - Reactive and Java 9
+https://dzone.com/articles/reactive-streams-in-java-9
 https://aboullaite.me/reactive-streams-example-java-9/?elq_mid=102312&sh=17261316962220229152411102214&cmid=WWMK170418P00047    
 
 - Java 9 u. Modules
-implement a sample
+implement a sample z.B. https://www.infoq.com/articles/CIWithJava9VertX
 
 - Circut Breaker Pattern see https://spring.io/guides/gs/circuit-breaker/
 
