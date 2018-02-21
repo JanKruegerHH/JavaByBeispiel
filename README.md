@@ -124,6 +124,7 @@ implement a sample z.B. https://www.infoq.com/articles/CIWithJava9VertX
   Maybe use static code analysis and find dependencies between packages by using the imports
   
 - Javaslang bzw. das Projekt hat einen neuen Namen s. http://www.vavr.io/
+  => Achtung! Vavr verwendet gleiche Klassennamen wie die in Java bereits bekannten, z.B. List, das kann zu Irritationen führen? 
 
 - Spring Boot MicroServices with Consul (Registry)
 https://www.infoq.com/articles/Microservices-SpringBoot?utm_source=notification_email&utm_campaign=notifications&utm_medium=link&utm_content=content_in_followed_topic&utm_term=daily
