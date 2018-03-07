@@ -61,6 +61,7 @@ http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/ 
 
 Todos:
 - wie wird der Web-Client eigentlich ganau an dem Bus registriert??
+- pom.xml aufräumen
 - Lombok funktioniert nicht?
 - Dependency Management? in parent pom???
 - einige Klassen sind deprecated z.B. in HttpServerVerticle
