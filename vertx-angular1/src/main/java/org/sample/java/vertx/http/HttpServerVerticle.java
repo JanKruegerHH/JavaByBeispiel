@@ -1,12 +1,11 @@
 package org.sample.java.vertx.http;
 
-
 import com.github.rjeschke.txtmark.Processor;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.bridge.PermittedOptions;
 import io.vertx.ext.web.handler.sockjs.BridgeOptions;
-import io.vertx.ext.web.handler.sockjs.PermittedOptions;
 import io.vertx.rxjava.core.AbstractVerticle;
 import io.vertx.rxjava.core.http.HttpServer;
 import io.vertx.rxjava.ext.web.Router;
@@ -23,6 +22,7 @@ import org.slf4j.LoggerFactory;
 import rx.Observable;
 
 import java.util.Arrays;
+
 
 public class HttpServerVerticle extends AbstractVerticle {
 
