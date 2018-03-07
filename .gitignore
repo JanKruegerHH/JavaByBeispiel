@@ -5,6 +5,7 @@
 **/.settings
 **/.pmd
 **/.pmdruleset.xml
+**/.vertx
 **/target/
 **/test-output/
 **/generated/
