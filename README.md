@@ -40,14 +40,15 @@ Status: ok
 
 
 ## vert.x
-Project vert.x show
+Project vert.x shows
 - the use of Verticles
 
 ##### build it
 cd vertx-angular1 \
 mvn clean compile
 ##### run it
-./redeploy.sh \
+Linus: $ ./redeploy.sh \
+Windows: $ redeploy.bat \
 http://localhost:8080/
 
 see https://github.com/vert-x3/vertx-guide-for-java-devs/tree/master/step-9
