@@ -39,25 +39,33 @@ Project streams shows
 Status: ok
 
 
-## vert.x
+## vert.x - angular1
 Project vert.x shows
 - the use of Verticles
+- angular1 connecting to vertx-eventbus
+- the separation of business logic and vertx-code is not perfect
 
-##### build it
-cd vertx-angular1 \
+#### build it
+```
+cd vertx-angular1
 mvn clean compile
-##### run it
-Linus: $ ./redeploy.sh \
-Windows: $ redeploy.bat \
-http://localhost:8080/
+```
 
-see https://github.com/vert-x3/vertx-guide-for-java-devs/tree/master/step-9
+#### run it
+Linux
+```
+$ ./redeploy.sh
+```
+Windows
+```
+$ redeploy.bat
+```
+then open http://localhost:8080/
 
-see also 
-http://vertx.io/docs/guide-for-java-devs/ \
-https://github.com/vert-x3/vertx-guide-for-java-devs \
-http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/ \
-(https://github.com/benorama/ngrx-realtime-app https://github.com/vert-x3/vertx-examples)
+see \
+https://github.com/vert-x3/vertx-guide-for-java-devs/tree/master/step-9 \
+http://vertx.io/docs/guide-for-java-devs \
+https://github.com/vert-x3/vertx-guide-for-java-devs 
 
 Todos:
 - wie wird der Web-Client eigentlich ganau an dem Bus registriert??
@@ -67,6 +75,19 @@ Todos:
 
 Status: to be finished 
 
+## vert.x - angular5 - springboot
+The project shows
+- the use of springboot and vertx
+- connecting to vertx via Angular5 
+
+see \
+https://github.com/vert-x3/vertx-examples/tree/master/spring-examples/springboot-example \
+http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/ \
+(https://github.com/benorama/ngrx-realtime-app https://github.com/vert-x3/vertx-examples)
+
+Status: to be finished 
+
+
 ## angular
 Samples with Angular 5 shows:
 - Concept of Components
@@ -74,26 +95,37 @@ Samples with Angular 5 shows:
 - HttpClient (and Mock for Server)
 - a Search-Component while you type
 
-#### nodejs
+### nodejs
 Simple sample using NodeJs
-'$ node nodejs/simple-app.js'
+```
+$ node nodejs/simple-app.js
+```
 then open http://localhost:3000/
 
-#### quick-start
+### quick-start
 see https://angular.io/guide/quickstart
-##### run it
-'$ cd quick-start \
-$ ng serve --open'
-##### build it
+#### run it
+```
+$ cd quick-start
+$ ng serve --open
+```
+#### build it
+```
 ng build --prod
+```
 
-#### tutorial
+### tutorial
 see https://angular.io/tutorial
-##### run it
-'$ cd tutorial \
-$ ng serve --open'
-##### build it
+#### run it
+```
+$ cd tutorial
+$ ng serve --open
+```
+
+#### build it
+```
 ng build --prod
+```
 
 Todos:
 - wie wird jshint (codechecker) verwendet? Es gibt eine Datei tslint?
@@ -142,3 +174,4 @@ https://aboullaite.me/spring-boot-monitoring-prometheus-grafana/
 - Data Structures in Java
 http://www.javaworld.com/article/3215112/learn-java/java-101-datastructures-and-algorithms-in-java-part-1.html?idg_eid=d59278da06accc91ade1688938e166a0&email_SHA1_lc=b6f9755e63b6a3098c23b74f35fa836d5cac85fd&cid=jw_nlt_javaworld_weekly_2017-08-24&utm_source=Sailthru&utm_medium=email&utm_campaign=Javaworld%20Update%202017-08-24&utm_term=javaworld_weekly
 
+- SoanrQube verwenden, es gibt eine Instanz für Open-Source-Projekte
