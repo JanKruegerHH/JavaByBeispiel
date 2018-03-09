@@ -43,7 +43,7 @@ Status: ok
 Project vert.x shows
 - the use of Verticles
 - angular1 connecting to vertx-eventbus
-- the separation of business logic and vertx-code is not perfect
+- in this implementation the separation of business logic and vertx-code is not perfect
 
 #### build it
 ```
@@ -80,10 +80,16 @@ The project shows
 - the use of springboot and vertx
 - connecting to vertx via Angular5 
 
+Diesen Counter erstellen
+https://github.com/benorama/ngrx-realtime-app
+
+s.a. BuildingRectiveMicroservicesInJava und dort das Beispiel vertx u. RxJava auf S.16 ansehen.
+
 see \
 https://github.com/vert-x3/vertx-examples/tree/master/spring-examples/springboot-example \
 http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/ \
-(https://github.com/benorama/ngrx-realtime-app https://github.com/vert-x3/vertx-examples)
+(https://github.com/benorama/ngrx-realtime-app https://github.com/vert-x3/vertx-examples) \
+https://dzone.com/articles/getting-started-with-vertx-and-spring-in-under-15
 
 Status: to be finished 
 

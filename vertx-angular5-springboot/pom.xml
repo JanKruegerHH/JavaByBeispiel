@@ -4,21 +4,74 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.4.RELEASE</version>
-        <relativePath/>
+        <groupId>org.sample.java</groupId>
+        <artifactId>java-by-beispiel</artifactId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
+    <name>Vert.x</name>
+    <artifactId>vertx-angular5-springboot</artifactId>
 
-    <artifactId>springboot-example</artifactId>
-
+    <!--
+    todo: parent ist anders besetzt!
+    Spring Boot ohne parent-Tag entwickeln
+    -->
+    <!--<parent>-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+    <!--<version>1.2.4.RELEASE</version>-->
+    <!--<relativePath/>-->
+    <!--</parent>-->
 
     <properties>
+        <!--<java.version>1.8</java.version>-->
+        <!--<maven.compiler.version>3.7</maven.compiler.version>-->
+        <spring.boot.version>2.0.0.RELEASE</spring.boot.version>
         <vertx.version>3.5.1</vertx.version>
-        <java.version>1.8</java.version>
     </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -30,6 +83,11 @@
             <artifactId>vertx-core</artifactId>
             <version>${vertx.version}</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.vertx</groupId>-->
+            <!--<artifactId>vertx-rx-java</artifactId>-->
+            <!--<version>${vertx.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-web</artifactId>
@@ -38,39 +96,16 @@
     </dependencies>
 
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <!-- We specify the Maven compiler plugin as we need to set it to Java 1.8 -->
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.2.4.RELEASE</version>
-            </plugin>
-        </plugins>
-    </build>
-
-    <profiles>
-        <profile>
-            <id>staging</id>
-            <repositories>
-                <repository>
-                    <id>staging</id>
-                    <url>https://oss.sonatype.org/content/repositories/iovertx-3750/</url>
-                </repository>
-            </repositories>
-        </profile>
-    </profiles>
+    <!--<profiles>-->
+    <!--<profile>-->
+    <!--<id>staging</id>-->
+    <!--<repositories>-->
+    <!--<repository>-->
+    <!--<id>staging</id>-->
+    <!--<url>https://oss.sonatype.org/content/repositories/iovertx-3750/</url>-->
+    <!--</repository>-->
+    <!--</repositories>-->
+    <!--</profile>-->
+    <!--</profiles>-->
 
 </project>
