@@ -105,8 +105,9 @@ CompletionHandler: can notify when all nodes are reached ?
 
 
 see \
-https://github.com/benorama/ngrx-realtime-app
-http://vertx.io/docs/
+https://www.smashingmagazine.com/2016/06/an-introduction-to-redux/ \
+https://github.com/benorama/ngrx-realtime-app \
+http://vertx.io/docs/ \
 https://github.com/vert-x3/vertx-examples/tree/master/spring-examples/springboot-example \
 http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/ \
 (https://github.com/benorama/ngrx-realtime-app https://github.com/vert-x3/vertx-examples) \
