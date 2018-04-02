@@ -67,13 +67,7 @@ https://github.com/vert-x3/vertx-guide-for-java-devs/tree/master/step-9 \
 http://vertx.io/docs/guide-for-java-devs \
 https://github.com/vert-x3/vertx-guide-for-java-devs 
 
-Todos:
-- wie wird der Web-Client eigentlich ganau an dem Bus registriert??
-- pom.xml aufräumen
-- Lombok funktioniert nicht? Obwohl es included ist, siehe Listing beim Bauen!?
-- Dependency Management? in parent pom???
-
-Status: to be finished 
+Status: ok 
 
 ## vert.x - angular5 - springboot
 The project shows

@@ -12,7 +12,6 @@
     <modelVersion>4.0.0</modelVersion>
     <name>Vert.x - Angular1</name>
     <artifactId>vertx</artifactId>
-    <!--<packaging>jar</packaging>-->
 
     <properties>
         <vertx.version>3.5.1</vertx.version>
@@ -154,71 +153,29 @@
             <groupId>io.vertx</groupId>
             <artifactId>vertx-jdbc-client</artifactId>
         </dependency>
-
-        <!--?????-->
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-auth-shiro</artifactId>
         </dependency>
-
-        <!--?????-->
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-auth-jwt</artifactId>
         </dependency>
-
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-codegen</artifactId>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>com.github.rjeschke</groupId>
             <artifactId>txtmark</artifactId>
             <version>0.13</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>ch.qos.logback</groupId>-->
-            <!--<artifactId>logback-classic</artifactId>-->
-            <!--&lt;!&ndash;<version>1.2.3</version>&ndash;&gt;-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.slf4j</groupId>-->
-            <!--<artifactId>slf4j-api</artifactId>-->
-            <!--<version>1.7.25</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>ch.qos.logback</groupId>-->
-            <!--<artifactId>logback-classic</artifactId>-->
-            <!--<version>1.2.3</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.projectlombok</groupId>-->
-            <!--<artifactId>lombok</artifactId>-->
-            <!--<version>1.16.18</version>-->
-            <!--&lt;!&ndash;<version>${lombok.version}</version>&ndash;&gt;-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>2.3.4</version>
         </dependency>
-
-
-        <!--siehe parent pom ?????-->
-        <!--<dependency>-->
-            <!--<groupId>junit</groupId>-->
-            <!--<artifactId>junit</artifactId>-->
-            <!--<version>4.12</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>io.vertx</groupId>-->
-            <!--<artifactId>vertx-unit</artifactId>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
     </dependencies>
 
 </project>
