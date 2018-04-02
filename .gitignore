@@ -11,4 +11,6 @@
 **/generated/
 **/db/
 **/dist/
+# NPM Angular Directory
+**/node_modules
 
