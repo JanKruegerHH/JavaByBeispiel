@@ -78,14 +78,42 @@ Status: to be finished
 ## vert.x - angular5 - springboot
 The project shows
 - the use of springboot and vertx
-- connecting to vertx via Angular5 
+- connecting to vertx via Angular5
+- the use of @ngrx/store see https://www.concretepage.com/angular-2/ngrx/ngrx-store-4-angular-5-tutorial 
+  and https://github.com/ngrx/platform/blob/master/docs/store/README.md
 
+### run it
+Server: 
+```
+mvn clean spring-boot:run
+```
+oder
+```
+mvn clean package && java -jar target/vertx-angular5-springboot-1.0-SNAPSHOT.jar
+```
+Client:
+Install npm-Libs
+```
+npm install
+(npm install @ngrx/store)
+```
+```
+$ cd angular5
+$ ng serve --open
+```
+
+todo: \
 Diesen Counter erstellen
 https://github.com/benorama/ngrx-realtime-app
 
-s.a. BuildingRectiveMicroservicesInJava und dort das Beispiel vertx u. RxJava auf S.16 ansehen.
+s.a. BuildingReactiveMicroservicesInJava und dort das Beispiel vertx u. RxJava auf S.16 ansehen.
 
 see \
+https://github.com/benorama/ngrx-realtime-app
+
+
+
+http://vertx.io/docs/
 https://github.com/vert-x3/vertx-examples/tree/master/spring-examples/springboot-example \
 http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/ \
 (https://github.com/benorama/ngrx-realtime-app https://github.com/vert-x3/vertx-examples) \
@@ -141,10 +169,14 @@ Status: to be finished
 
 
 ## todos
+- Java Functions:
+see https://dzone.com/articles/cheatsheet-java-functional-interfaces?edition=365238&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-12
+
 - Reactive Programming
 see Samples in http://www.javamagazine.mozaicreader.com/JanFeb2018#&pageSet=0&page=0&contentItem=0 
     start with Spring Boot Reactor Sample using MongoDB
     see CQRS Kafka Sample    
+see https://dzone.com/articles/spring-webflux-getting-started?edition=365236&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-10
 see https://dzone.com/articles/rxjava-part-1-a-quick-introduction 
 oder https://dzone.com/articles/deal-with-hot-observables-in-a-web-ui?edition=337908&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-25
 (das Beispiel evtl. mit Angular implementieren?)

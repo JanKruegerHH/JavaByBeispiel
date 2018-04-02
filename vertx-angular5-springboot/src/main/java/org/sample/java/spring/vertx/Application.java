@@ -10,8 +10,11 @@ import javax.annotation.PostConstruct;
 @SpringBootApplication
 public class Application {
 
+//    @Autowired
+//    private StaticServer staticServer;
+
     @Autowired
-    private StaticServer staticServer;
+    private CounterVerticle counterVerticle;
 
     public static void main(String[] args) {
 
@@ -22,6 +25,7 @@ public class Application {
 
     @PostConstruct
     public void deployVerticle() {
-        Vertx.vertx().deployVerticle(staticServer);
+//        Vertx.vertx().deployVerticle(staticServer);
+        Vertx.vertx().deployVerticle(counterVerticle);
     }
 }
