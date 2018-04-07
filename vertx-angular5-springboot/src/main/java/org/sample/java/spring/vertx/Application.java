@@ -10,14 +10,10 @@ import javax.annotation.PostConstruct;
 @SpringBootApplication
 public class Application {
 
-//    @Autowired
-//    private StaticServer staticServer;
-
     @Autowired
     private CounterVerticle counterVerticle;
 
     public static void main(String[] args) {
-
         // This is basically the same example as the web-examples static site example but it's booted using
         // Spring Boot, not Vert.x
         SpringApplication.run(Application.class, args);
@@ -25,7 +21,6 @@ public class Application {
 
     @PostConstruct
     public void deployVerticle() {
-//        Vertx.vertx().deployVerticle(staticServer);
         Vertx.vertx().deployVerticle(counterVerticle);
     }
 }

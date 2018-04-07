@@ -73,8 +73,8 @@ Status: ok
 The project shows
 - the use of springboot and vertx
 - connecting to vertx via Angular5
-- the use of @ngrx/store see https://www.concretepage.com/angular-2/ngrx/ngrx-store-4-angular-5-tutorial 
-  and https://github.com/ngrx/platform/blob/master/docs/store/README.md
+- build the app described in http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/ and https://github.com/benorama/ngrx-realtime-app using java for the backend\
+- the use of Redux and @ngrx/store
 
 ### run it
 Server: 
@@ -97,22 +97,14 @@ $ ng serve --open
 ```
 
 todo: \
-Wieso kann ich in dem Verticle nicht direkt den Eventbus verwenden und benötige noch den server (siehe ganz unten in CounterVerticle)SocketJsHandler? s. dazu https://github.com/vert-x3/vertx-examples/blob/master/web-examples/src/main/java/io/vertx/example/web/chat/Server.java \
-Diesen Counter erstellen https://github.com/benorama/ngrx-realtime-app \
-s.a. BuildingReactiveMicroservicesInJava und dort das Beispiel vertx u. RxJava auf S.16 ansehen. \
 Client: beim Starten kommt eine Typescript Warning?! \
 wozu ist index.ts? \
-CompletionHandler: can notify when all nodes are reached ?
 
-
-see \
+see also \
 https://www.smashingmagazine.com/2016/06/an-introduction-to-redux/ \
-https://github.com/benorama/ngrx-realtime-app \
+https://www.concretepage.com/angular-2/ngrx/ngrx-store-4-angular-5-tutorial and https://github.com/ngrx/platform/blob/master/docs/store/README.md \
 http://vertx.io/docs/ \
-https://github.com/vert-x3/vertx-examples/tree/master/spring-examples/springboot-example \
-http://vertx.io/blog/building-a-real-time-web-app-with-angular-ngrx-and-vert-x/ \
-(https://github.com/benorama/ngrx-realtime-app https://github.com/vert-x3/vertx-examples) \
-https://dzone.com/articles/getting-started-with-vertx-and-spring-in-under-15
+https://github.com/vert-x3/vertx-examples/
 
 Status: to be finished 
 
