@@ -88,11 +88,12 @@ mvn clean package && java -jar target/vertx-angular5-springboot-1.0-SNAPSHOT.jar
 Client:
 Install npm-Libs
 ```
+$ cd client-angular5
 npm install
 (npm install @ngrx/store)
 ```
 ```
-$ cd angular5
+$ cd client-angular5
 $ ng serve --open
 ```
 
