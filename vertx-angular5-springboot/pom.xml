@@ -13,22 +13,9 @@
     <name>Vert.x - Angular5 - Springboot</name>
     <artifactId>vertx-angular5-springboot</artifactId>
 
-    <!--
-    todo: parent ist anders besetzt!
-    Spring Boot ohne parent-Tag entwickeln
-    -->
-    <!--<parent>-->
-    <!--<groupId>org.springframework.boot</groupId>-->
-    <!--<artifactId>spring-boot-starter-parent</artifactId>-->
-    <!--<version>1.2.4.RELEASE</version>-->
-    <!--<relativePath/>-->
-    <!--</parent>-->
-
     <properties>
-        <!--<java.version>1.8</java.version>-->
-        <!--<maven.compiler.version>3.7</maven.compiler.version>-->
         <spring.boot.version>2.0.0.RELEASE</spring.boot.version>
-        <vertx.version>3.5.1</vertx.version>
+        <vertx.version>3.5.4</vertx.version>
     </properties>
 
     <build>
@@ -97,21 +84,7 @@
             <groupId>io.vertx</groupId>
             <artifactId>vertx-hazelcast</artifactId>
             <version>${vertx.version}</version>
-            <!--<version>3.5.1</version>-->
         </dependency>
     </dependencies>
-
-
-    <!--<profiles>-->
-    <!--<profile>-->
-    <!--<id>staging</id>-->
-    <!--<repositories>-->
-    <!--<repository>-->
-    <!--<id>staging</id>-->
-    <!--<url>https://oss.sonatype.org/content/repositories/iovertx-3750/</url>-->
-    <!--</repository>-->
-    <!--</repositories>-->
-    <!--</profile>-->
-    <!--</profiles>-->
 
 </project>

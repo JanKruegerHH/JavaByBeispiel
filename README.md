@@ -19,7 +19,7 @@ Project lambda-expressions shows
 
 s.a Java8TheCompleteReference-NinthEd-2014 / Chapter 15 Lambda Expresseion
 
-Status: ok
+Status: OK
 
 
 ## lambda-comparators
@@ -29,14 +29,14 @@ Project lambda-comparators shows
 
 s.a. https://www.mkyong.com/java8/java-8-lambda-comparator-example/?utm_source=mkyong&utm_medium=sidebar&utm_campaign=100k-500k&utm_content=3
 
-Status: ok
+Status: OK
 
 
 ## streams
 Project streams shows
 - the use of stream, e.g. filter, maps, reduce and sort
 
-Status: ok
+Status: OK
 
 
 ## vert.x - angular1
@@ -67,7 +67,7 @@ https://github.com/vert-x3/vertx-guide-for-java-devs/tree/master/step-9 \
 http://vertx.io/docs/guide-for-java-devs \
 https://github.com/vert-x3/vertx-guide-for-java-devs 
 
-Status: ok 
+Status: OK 
 
 ## vert.x - angular5 - springboot
 The project shows
@@ -97,17 +97,13 @@ $ cd client-angular5
 $ ng serve --open
 ```
 
-todo: \
-Client: beim Starten kommt eine Typescript Warning?! \
-wozu ist index.ts? \
-
 see also \
 https://www.smashingmagazine.com/2016/06/an-introduction-to-redux/ \
 https://www.concretepage.com/angular-2/ngrx/ngrx-store-4-angular-5-tutorial and https://github.com/ngrx/platform/blob/master/docs/store/README.md \
 http://vertx.io/docs/ \
 https://github.com/vert-x3/vertx-examples/
 
-Status: to be finished 
+Status: OK 
 
 
 ## angular
@@ -149,10 +145,7 @@ $ ng serve --open
 ng build --prod
 ```
 
-Todos:
-- wie wird jshint (codechecker) verwendet? Es gibt eine Datei tslint?
-
-Status: to be finished
+Status: OK
 
 
 
