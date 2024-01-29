@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by Hamburg Süd KG (Hamburg Südamerikanische Dampfschifffahrtsgesellschaft KG) -->
+<!-- Mit XMLSpy v2010 rel. 2 (http://www.altova.com) von Hamburg Süd KG (Hamburg Südamerikanische Dampfschifffahrtsgesellschaft KG) bearbeitet -->
+<!--Created with Liquid XML Studio 6.1.17.0 - FREE Community Edition (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:globe="http://www.hamburgsud.com/Schemas/Common/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1.2">
+	<xs:element name="MESSAGE_HEADER" type="type_MessageHeader"/>
+	<xs:complexType name="type_MessageHeader">
+		<xs:sequence>
+			<xs:element name="MessageID">
+				<xs:annotation>
+					<xs:documentation>UniqueID
+
+GLOBE Core EDI Functionalities Field: Message ID</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="BusinessID" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>GLOBE Core EDI Functionalities Field: Main Reference</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ExternalReference" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>GLOBE Core EDI Functionalities Field: External Reference</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CorrelationID">
+				<xs:annotation>
+					<xs:documentation>In general: unique ID to correlate a couplle of messages with different MessageIDs</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MessageFunction" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>GLOBE Core EDI Functionalities Field: Message Function. See DD Repository 90641 for possible values.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:enumeration value="EFORG"/>
+						<xs:enumeration value="EFUPD"/>
+						<xs:enumeration value="EFCAN"/>
+						<xs:enumeration value="EFREP"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MessageName">
+				<xs:annotation>
+					<xs:documentation>GLOBE Core EDI Functionalities Field:  Message Type. See DD Repository 90645 for possible values.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="Version" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>Commonly the (GLOBE) release in which this message was introduced</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TimeStamp" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Current UTC timestamp in the format "yyyy-mm-ddThh:mm:ssZ"
+
+GLOBE Core EDI Functionalities Field: Message Date / Time</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TTL" type="xs:unsignedShort" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For request message in sync. scenarios: time in seconds the mesage is valid. After that the sender of the request message will not wait for a reply</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Source">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OriginalSender">
+							<xs:annotation>
+								<xs:documentation>e.g. GLOBE userid, or external partbner name, or internal system name.
+
+GLOBE Core EDI Functionalities Field: Partner (Receiver or Sender depending on In / Out of in the EDI Interface Setup Screen)
+
+Correlated field in the CDM: /Receiver/MainID</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="ESBApplicationName">
+							<xs:annotation>
+								<xs:documentation>e.g. GLOBE, BW-BC, BW-COMPASS, ... => module which placed messaged onto the Enterprise Service Bus</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="Region">
+							<xs:annotation>
+								<xs:documentation>Region where the message started. e.g. GLB, REU, RAN, RAS, etc. For GLOBE always GLB, for all EDI messages it will be HAM</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Receiver" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>All receivers the message might have. It is theor. possible, that there are more recivers by bridging and routing on commuication level than listed here. But mostlly it will be 1:1 since most communication is based on a P2P pattern</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MainID">
+							<xs:annotation>
+								<xs:documentation>Main identifier for the receiver of the message. Can be a system name (ECOS), or the name of a business partner in an EDI scen.
+For buisness partners in EDI scen. this ID must be unique.
+
+GLOBE Core EDI Functionalities Field: Partner (Receiver or Sender depending on In / Out of in the EDI Interface Setup Screen)
+
+Correlated field in the CDM: /Source/OriginalSender</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="SubID" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Sub identifier is used when for the MainID additional information is needed, as for e.g. INTTRA IFTMBC</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Chunks" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CurrentChunkNo" type="xs:long"/>
+						<xs:element name="EOFChunks" type="xs:boolean"/>
+						<xs:element name="TotalChunkNoSent" type="xs:long" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>only set if EOFChunks=true</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BodyVersion" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Checksum" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="JobID" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>An ID assigned by the sending system to identify to which "job" this message belongs to</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TestFlag" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[0,1] Used to indicate if message should be processed in test or real mode
+
+GLOBE Core EDI Functionalities Field: Test Indicator</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EDI" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DOCUMENT_ID" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>ID specific per partner and business reference (e.g. booking number). This can be used e.g. in BGM segment (1004). Will be provided by EDIF. Could be sequence number or a business reference number.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="REFERENCE_ID" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>This can be used e.g. in RFF (1154) segment. Will be provided by EDIF.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="EVENT_FUNC_ACK" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Indicate whether event for functional acknowledgement (e.g. CONTRL) is requested for this message. If yes, incoming funtional acknowledgement should be sent to original sender.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="EVENT_APPL_ACK" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Indicate whether event for  application acknowledgement (e.g. APERAK) is requested for this message. If yes, incoming application acknowledgement should be sent to original sender.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SequenceNumber" type="xs:long" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The message order can be determined by a sequence number (either a timestamp, a number or a filename) given in the EDI message. TIBCO must retrieve the sequence number and direct it to GLOBE via a defined field in CDM message header. The source of the sequence number must be specified in the particular Interface Specifications.
+EDIF will store the sequence number in the EDI_MESSAGE entity. When receiving multiple messages with the same business ID, EDIF should use the sequence number to find out whether this is the latest EDI message. If a message with a lower sequence number than the last processed one arrives, it should not be processed and instead should write a skipped event in EDI message tracking.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

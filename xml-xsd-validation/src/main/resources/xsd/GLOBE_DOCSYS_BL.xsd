@@ -1,0 +1,2567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 3 (http://www.altova.com) by Hamburg Südamerikanische Dampfschifffahrts-Gesellschaft KG (Hamburg Südamerikanische Dampfschifffahrts-Gesellschaft KG) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="GLOBE_commonTypes.xsd"/>
+	<xs:include schemaLocation="GLOBE_Common_MessageHeader.xsd"/>
+	<xs:element name="GLOBE_DOCSYS_BL">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MESSAGE_HEADER"/>
+				<xs:element name="MESSAGE_BODY">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOCSYS_BL" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="LODKEY" type="type_LODKEY">
+											<xs:annotation>
+												<xs:documentation>This does not contain LOD-RECTYP3, since that is filled dynamically with the set type identifier.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="LODREST" type="type_LODREST"/>
+										<xs:element name="SA1001">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="BLHA-DATEN">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="POL_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-LHAFEN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="POD_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-DHAFEN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="COMPANY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-FIRMA</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SAILING_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-SLGDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DATE_OF_ISSUE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-ISSDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NO_OF_BL" type="xs:integer" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-ANZBL</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SIGNED_AT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-VRTHFN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PLACE_OF_PAYMENT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-ZHLBHFN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PAYCODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>4BLHA-ZHLB</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NO_OF_COPIES" type="xs:integer" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-BLCOPY</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CARGO_SPEC" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-CRGOKZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_BL_TO_ORDER" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-ORDRKZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FORWARDER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-FWRDR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SHIPPER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-SHIPPR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CONSIGNEE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-CONSGN
+Mandatory if IS_BL_TO_ORDER = 'N'</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NOTIFY1" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-NOTIFY1
+Mandatory if IS_BL_TO_ORDER = 'Y'</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NOTIFY2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-NOTIFY2</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NOTIFY3" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-NOTIFY3</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FREIGHT_DEBITOR" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-KUNDE1</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FAC_RECEIVER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-KUNDE2</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="STAMP_CODES" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-STMPLT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SLOTOWNER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-SLOOWN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_WAYBILL" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-WAYBIL</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="BLHA-VRTSPR" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="NEWLPLACE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>4BLHA-NEWLPLATZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NEWDPLACE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>4BLHA-NEWDPLATZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NEWLBLNO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>4BLHA-NEWBLNO</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="AGENCY_CODE_OUT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-AGENTO</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="AGENCY_CODE_IN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-AGENTI</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BOOKING_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-BUCHKZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CUSTOMS_REF_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-ZOLLREF</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_CERTIFICATION" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-CRTFCTN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FORWARDER_REF_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-FWRDREF</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CORR_CONTROL_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-CORCNO</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MANUAL_RFC_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-CORDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CORRECTION_TEXT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-CORTXT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="BLHA-CORCOD" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="CORRECTION_CODES" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="CORRECTION_CODE1" type="type_NOT_EMPTY_STRING">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-CORCOD1</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CORRECTION_CODE23" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-CORCOD23</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CORRECTION_CODE4" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-CORCODR</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="CARGO_SOURCE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-CARSOU</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FORWARDER_REF_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-FORWRF</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SHIPPER_REF_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-SHIPRF</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BOOKING_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-BOOKDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BOOKING_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-BOOKNO</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BOOKING_REMARKS" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-BOOKRM</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_IM_TARIFF_APPL" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-UPCKZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IPW_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-IPWNUM</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="REFQF" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="REFQF1" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(1)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(2)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF3" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(3)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF4" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(4)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF5" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(5)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF6" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(6)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF7" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(7)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF8" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(8)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF9" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(9)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF10" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(10)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REFQF11" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>4BLHA-REFQF(11)</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="TS_PORT1_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-TSHAF1</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TS_PORT2_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-TSHAF2</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_LUGGAGE" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-LUGSIGN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PREC_VOYAGE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-PCRREISE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ONC_VOYAGE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-OCRREISE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SHORTSHIPPED_VOYAGE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-SSHREISE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_FAK" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-FAKSGN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="AGENT_SFC" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-AGTSFC</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="COPY_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHA-COPYKZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SA1001A" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Place of Payment Agentur Zuladeprüfung</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="BLHA-DATEN">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="BLZ_ITEMNO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>1001A-PLACESG</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BLZ_PLACE_OF_PAYMENT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>1001A-PLACE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SA1002">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="BLHB-DATEN">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="MODE_OF_TRAVEL" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-MODE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TARIFF_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-TARIF</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TARIFF_CURRENCY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-TRFWHRG</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ACCOUNTING_CURRENCY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-ACWHRG</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="EXCHANGE_RATE" type="xs:decimal" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-KURS</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="VOUCHER_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-FKTNR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BL_STATUS" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-FSTATUS</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NETFREIGHT" type="xs:decimal" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-NETFRT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ACI_CONTROL" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-ACI</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_WHARFAGE_HANDLING" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-WFGHKZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CODING_CLERK" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-CORCLRK</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SCC_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-SCCDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MICRO_FICHE_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-MCRNO</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_COLD_STORE_DRAYAGE" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-NCSDKZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DATE_OF_LAST_EDIT" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-EDTDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DATE_OF_LAST_BLS" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-BLSDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DAILY_REF_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-BLTNR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BL_CONT_STATUS" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-CNTSTAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ERROR_CONTROL_BYTE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-FKTKZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_COMPLETE" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-ENDKZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DATE_OF_CREATION" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-ERSTDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DATE_OF_ACT_VERSION" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-VRSDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DATE_OF_FINAL_MANIFEST" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-MNFDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DATE_ACCOUNT_TRANS" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-ACIDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DATE_OF_INVOICING" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-FKTDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SCAC_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-PRAEFX</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="BLHB-KEY2">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="USTATION" type="type_NOT_EMPTY_STRING">
+																	<xs:annotation>
+																		<xs:documentation>4BLHB-USTATION</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="UCPU" type="type_NOT_EMPTY_STRING">
+																	<xs:annotation>
+																		<xs:documentation>4BLHB-UCPU</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="UAGENT" type="type_NOT_EMPTY_STRING">
+																	<xs:annotation>
+																		<xs:documentation>4BLHB-UAGENT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="UBLREISE" type="type_NOT_EMPTY_STRING">
+																	<xs:annotation>
+																		<xs:documentation>4BLHB-UBLREISE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="UBLNUMBER" type="type_NOT_EMPTY_STRING">
+																	<xs:annotation>
+																		<xs:documentation>4BLHB-UBLLFD</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="UBLVERSION" type="type_NOT_EMPTY_STRING">
+																	<xs:annotation>
+																		<xs:documentation>4BLHB-UBLVERS</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="USOURCE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>4BLHB-USOURCE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="BLHB-DATEN2">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="CORRECTION_TYPE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-CORTYP</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SCAC_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-SCACOD</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SOB_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-SHIDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TS_PORT1_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-TSHAF1</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TS_PORT2_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-TSHAF2</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BL_RELEASE_PLACE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-RELHFN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TS_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="COPY_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-CPDATE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PREC_ORIGIN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-PCRORI</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_ICMS_CHARGE" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-ICMSSW</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ICMS_CHARGE_PCT" type="xs:decimal" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-ICMSPZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PREC_DEST" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-PCRDES</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PREC_BL_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-PCRBLN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ONC_ORIGIN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-OCRORI</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ONC_DEST" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-OCRDES</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ONC_BL_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-OCRBLN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="AGENT_AT_POD" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-IOAGTT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ONC_OWNER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-OCROWN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PREC_OWNER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-PCROWN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_ELSEWHERE_PAYABALE" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-PAYPRT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DEMURRAGE_STP" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="DEMURRAGE_STP1" type="type_NOT_EMPTY_STRING">
+																				<xs:annotation>
+																					<xs:documentation>3BLHB-ADSTP1</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="DEMURRAGE_STP2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3BLHB-ADSTP2</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="DEMURRAGE_STP3" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3BLHB-ADSTP3</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="DEMURRAGE_FREE_DAYS" type="xs:integer" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-DEMFREDAY</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FRT_RECON_UNLOAD_DATE_Z" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-FRTUDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_WEEKEND_COUNTING" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-WECNT-F</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FRT_RECON_UNLOAD_DATE_W" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-FRTWDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_YMC" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-YMCSGN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BL_BOUND" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-BLHBND</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ACC_BOUND" type="xs:integer" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-ACCBND</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CNTRL" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-CONTRL</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BOLETO_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-BOLETONO</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BOLETO_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-BOLDATE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_CAPATAZIA" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-CAPSGN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PREC_FEEDER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-PREFEE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ONC_FEEDER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-OCRFEE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BLNO_OR_UBLI" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-BLNUMM</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_ISP" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-ISPSGN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MODE_LOADAREA" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-SPAGLO</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MODE_DISCAREA" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHB-SPAGDI</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SA1003">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="BLHC-DATEN">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="IS_BL_PRINT_DEST" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-BLPRDEST</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BL_PRINT_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-BLOPRDAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FREIGHTED_ORIGIN_BL" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-PRTBLO</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FREIGHTED_BL_COPY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-PRTBLC</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="STAT_SHIPPER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-SHIPPRS</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="STAT_CONSIGNEE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-PRODCR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SERVICE_CONTRACT_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-SERVCT-OLD</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CARGO_ORIGIN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-CARGOR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_TRMM" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-TRMMSW</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TRMM_PCT" type="xs:decimal" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-TRMMPZ</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CHARGE_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-CHASGN-TAB</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PREC_VOYAGE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-PCRVOYAGE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ONC_VOYAGE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-OCRVOYAGE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SHORTSHIPPED_VOYAGE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-SSHVOYAGE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ORIG_LOADPORT1" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-ORLPORT1</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ORIG_LOADPORT2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-ORLPORT2</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SERVICE_CONTRACT_NO_NEW" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-SERVCT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DMM_MANIFEST_PROTOCOL_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-DMM-MAPRTNUM</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DMM_BL_PROTOCOL_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-DMM-BLPRTNUM</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DMM_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-DMMDATE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DMM_TIME" type="xs:time" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-DMMTIME</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="STAT_CARGO_ORIGIN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-STAT-CARORI</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="STAT_CARGO_DEST" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-STAT-CARDES</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_MASTER_SERVICE_BL" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-MASSER</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FOREIGN_DELIVERY_FLAG" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-CUSTOMS</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FOREIGN_DELIVERY_NATION" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-FDELNA</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ACCOUNT_DIRECTION" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-D149-ACCDIR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="PREC_ACC_DIRECTION" type="xs:integer" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-PCRACCD</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CORRECTION_ENTITIES" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-CORENT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="FEEDER_LOAD_PORT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-FEELHA</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IS_PREC_FEEDER_LOGIC" type="xs:boolean" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC_PVSLSG</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BOOKING_PARTY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-BPARTY</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="COMPASS_CONTACT_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>3BLHC-COMCON</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ELSEWHERE_COPY_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>BLHC-ELSSGN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CTAC_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>BLHC-CTAC</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="BL_RELEASE_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>BLHC-BILLREL</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CARGO_RELEASE_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>BLHC_CARGOREL</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CTE_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>BLHC_CTESIGN</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SA1004" type="type_EDFA" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="SA3001" type="type_TXTA" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="SA4001" type="type_BLZA" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="CARGO_ITEM" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ITEM_NO" type="xs:integer">
+														<xs:annotation>
+															<xs:documentation>LOD-ITMNR</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="ITEM_SEQ_NO" type="xs:integer" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>LOD-ITMSEQ</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="SA2001">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ITMA-DATEN">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="NO_OF_PACKAGES" type="xs:integer" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-ANZPCK</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="PACKAGE_TYPE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-ARTPCK</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="GROSSWEIGHT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-GRSWGHT</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="GROSSWEIGHT_UNIT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-UNITCDG</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="NETWEIGHT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-NETWGHT</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="NETWEIGHT_UNIT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-UNITCDN</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="MEASUREMENT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-MSRMNT</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="MEASUREMENT_UNIT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-UNITCDM</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="VALUE_FOB" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-VALUE</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CURRENCY_FOB" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-WHRG</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="IS_BREAKBULK" type="xs:boolean" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-BRKBLK</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CONTAINER_SHARE" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-ANZTEU</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CONT_PREFIX" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-CNTPRFX</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CONT_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-CNTNR</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CONT_TYPE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-CNTTYP</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="TYPE_OF_SERVICE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-TYPSVC</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CONTAINER_TARE" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-CNTARE</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CONTAINER_STATUS" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-CNTSTAT</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="FCL_LCL" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-CNTLOC</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="IS_PART_CONT" type="xs:boolean" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-CNTPART</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="OWNERSHIP" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-CNTOWN</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SEAL_NOS" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="SEAL_NO1" type="type_NOT_EMPTY_STRING">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TSEAL1</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="SEAL_NO2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TSEAL2</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="SEAL_NO3" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TSEAL3</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="QUARANTINE_CODES" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="QUARANTINE_CODE1" type="type_NOT_EMPTY_STRING">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TQUAR1</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="QUARANTINE_CODE2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TQUAR2</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="QUARANTINE_CODE3" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TQUAR3</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="QUARANTINE_CODE4" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TQUAR4</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="QUARANTINE_CODE5" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TQUAR5</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="QUARANTINE_CODE6" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TQUAR6</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="QUARANTINE_CODE7" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TQUAR7</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="QUARANTINE_CODE8" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>3ITMA-TQUAR8</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="MODE_OF_TRAVEL" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-MODE</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="FREIGHT_TON_MARK" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-FRTTNM</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="ITEM_NETFREIGHT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-NETFRT</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="ITEM_OCEANFREIGHT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-OCNFRT</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="ITEM_GROUP_OFR" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-VOCNFRT</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="FREIGHT_TONS" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-FRTTON</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="BOOKING_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-BOOKNO</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="IS_IGNORE" type="xs:boolean" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMA-PAYERR</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="SA2002">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ITMB-DATEN">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="CARGO_SPECIFICATION" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-CRGOKZ</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="TARIFF_ITEM_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-TRFITM</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="COMMODITY_CODE_NZ" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-NZCOMDTY</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="COMMODITY_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-COMDTY</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="IS_FAK" type="xs:boolean" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-SHRTKZ</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SERVICE_CONTRACT_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-SVCCTR</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="IMDG_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-IMDGNO</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="IM_CONSIGNEE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-CONSGN</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="IM_NOTIFY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-NOTIFY</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="ISO_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-ISOCODE</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SPECIAL_REMARKS" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-REMARK</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="TO_ITEM" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-BISITM</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="FROM_ITM" type="xs:integer" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VNR</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="TO_ITM" type="xs:integer" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-BNR</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SUM_OF_PACKAGES" type="xs:integer" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VANZPCK</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SUM_GROSSWEIGHT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VGRSWGHT</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="PAYABLE_WEIGHT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VMENGE</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SUM_MEASUREMENT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VMSRMNT</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="PAYABLE_WEIGHT_UNIT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VUNITCD</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="IS_APCA" type="xs:boolean" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-APCAKZ</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="HS_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-HARMCD</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="IS_CONFERENCE" type="xs:boolean" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-CONFKZ</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SEPARATION_OF_ITEM" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-TRFISEP</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SPCKANZ" type="xs:integer" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-SPCKANZ</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SPCKART" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-SPCKART</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CUSTOMS_REFERENCE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-ZOLLREF</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="ITEMGROUP_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VBSIGN</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="MASTER_ITEM" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VBITM</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="MIN_TEMP" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-MINTEMP</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="MAX_TEMP" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-MAXTEMP</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REQ_TEMP" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-REQTEMP</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="TEMP_UNIT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-TEMPCOD</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="UN_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-UNNO</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="DELIVERY_MODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-DELMOD</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="COLLECT_DEPOT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-COLEDE</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="OVERHEIGHT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-BBHEGTH</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="OVERLENGTH" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-BBLNGTH</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="OVERWIDTH" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-BBWIDTH</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="TXTNR3" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-TXTNR3</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="FRESH_AIR" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-FREAIR</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="FAN_AIR" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-FANAIR</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CO2_LIMIT" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-CO2LIM</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="MIN_TEMP_UNIT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-MINTCOD</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="MAX_TEMP_UNIT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-MAXTCOD</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="REQ_TEMP_UNIT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-REQTCOD</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="VENT_SETTING" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VENTSET</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="BBK_DIMENSIONS" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-BBMEACD</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="VENTILATION" type="xs:decimal" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-VENAIR</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="MTY_REDELIVERY_DEPOT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-MTRDEP</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="PRODUCT_ID" type="xs:integer" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-PRODID</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="RAD_DATE" type="xs:date" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>3ITMB-RATEDATE</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="SA2003" type="type_EDFA" minOccurs="0" maxOccurs="unbounded"/>
+													<xs:element name="SA3002" type="type_TXTA" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Marks and Numbers</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="SA3003" type="type_TXTA" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Description of Goods</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="SA3005" type="type_TXTA" minOccurs="0" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>Texts without MaN and DoG</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="SA4002" type="type_BLZA" minOccurs="0" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SA0801" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="WTAB-KEY">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="COMPANY" type="type_NOT_EMPTY_STRING">
+																	<xs:annotation>
+																		<xs:documentation>D801-FIRMA</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TERRITORY" type="xs:integer" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-TERRTY</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SFC_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-SFCNR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="VERSION" type="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation>D801-VERSION</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="WTAB-DATEN">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="TAB_NUMBER" type="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation>D801-ATAB</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SFC_SHORT_NAME" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-ANAME</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SEQUENCE_NO" type="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation>D801-ASEQNR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="VERSION_NO" type="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation>D801-AVERSION</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TYPTAB">
+																	<xs:annotation>
+																		<xs:documentation>D801-TYPTAB</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="SHIPPER_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																			<xs:element name="FORWARDER_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																			<xs:element name="CONSIGNEE_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																			<xs:element name="NOTIFY1_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																			<xs:element name="NOTIFY2_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																			<xs:element name="NOTIFY3_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="ADRTAB" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="SFC_NAME1" type="type_NOT_EMPTY_STRING">
+																				<xs:annotation>
+																					<xs:documentation>D801-NAME1</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SFC_NAME2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-NAME2</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="SFC_NAME3" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-NAME3</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="STREET" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-STREET</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="ADDRESS_LINE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-ADRESS</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="TOWN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-TOWN</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="STATE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-STATE</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="COUNTRY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-COUNTRY</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="CITY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-CITY</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="ACC_MATRIX" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-MATRIX</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TRUST_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-TRUCOD</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="AGENT_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-AGECOD</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CONFERENCE_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-CONCOD</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="CURRENCY_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-CCYCOD</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DUNNING_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-DUNCOD</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SALES_REP" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-SALESA</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="HAM_ACC_ECOS" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-HACCTE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NET_DUE_DATE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-NEDUDA</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DIS_DUE_DATE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-DIDUDA</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DISC_RATE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-DISRAT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="DP_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-DPCODE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="EXCHANGE_CONTRACT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D801-EXCTRT</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ATTNTAB" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="ATTN_DC" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-ATTN1</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="ATTN_AC" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-ATTN2</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="ATTN_NOT_USED" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-ATTN3</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="PHONE_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-TELPHN</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="FAX_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-FAX</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="COMPANY_REG_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-CGC</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="LOCAL_COMPANY_REG_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>D801-LCRN</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SA0144" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>0..n per voyage, not per B/L. Needed in simple unload?</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="WTAB-KEY" type="type_WTABKEY"/>
+													<xs:element name="SAILING_DATE" type="xs:date" minOccurs="0"/>
+													<xs:element name="EXCHANGE_RATE" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="BASE_CURRENCY" type="type_NOT_EMPTY_STRING">
+																	<xs:annotation>
+																		<xs:documentation>D144-VNWHRG</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="TARGET_CURRENCY" type="type_NOT_EMPTY_STRING">
+																	<xs:annotation>
+																		<xs:documentation>D144-NCHWHRG</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="RATE" type="xs:decimal">
+																	<xs:annotation>
+																		<xs:documentation>D144-KURS</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="WTAB-REST" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="CLERK" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="PHONE" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="SERVICE" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="ACTDISCH" type="xs:date" minOccurs="0"/>
+																<xs:element name="DDEPOT" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="GVNUMB" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="SHIPPING_DATE" type="xs:date" minOccurs="0"/>
+																<xs:element name="PRE_VOYAGE" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="OCR_VOYAGE" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="GVNUMA" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="OPR_DATE" type="xs:date" minOccurs="0"/>
+																<xs:element name="DEPARTURE_DATE" type="xs:date" minOccurs="0"/>
+																<xs:element name="DEPARTURE_PORT" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+																<xs:element name="SAR_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D144-SAR-DATE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="SAR_TIME" type="xs:time" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D144-SAR-TIME</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NPA_DATE" type="xs:date" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D144-NPA-DATE</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NPA_TIME" type="xs:time" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D144-NPA-TIME</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="NPA_ARRNUM" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D144-NPA-ARRNUM</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="MANIFIESTO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>D144-MANIFIESTO</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="SA0104" minOccurs="0" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>0..n per 0144, not per B/L. Needed in simple unload? Order correct?</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="WTAB-KEY" type="type_WTABKEY"/>
+																<xs:element name="SEQUENCE_NO" type="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation>D104-LAUFNR</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="EXCHANGE_RATE" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="BASE_CURRENCY" type="type_NOT_EMPTY_STRING">
+																				<xs:annotation>
+																					<xs:documentation>D104-VNWHRG</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="TARGET_CURRENCY" type="type_NOT_EMPTY_STRING">
+																				<xs:annotation>
+																					<xs:documentation>D104-NCHWHRG</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="RATE" type="xs:decimal">
+																				<xs:annotation>
+																					<xs:documentation>D104-KURS</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="type_LODKEY">
+		<xs:annotation>
+			<xs:documentation>Deviating info in LOD-RECTYP3, to be set according to SA element; therefore not included here.
+Item No. and Item Sequence No. moved to Item level.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RECORD_TYPE" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>LOD-RECTYP1</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="STATION_ID_SENDER" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>LOD-STATION1</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="STATION_ID_RECEIVER" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>LOD-STATION2</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RECORD_TYPE_APPL" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>LOD-RECTYP2</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VESSEL_FINANCIAL_CODE" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>LOD-VESSEL, LOD-SCHIFF</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SERVICE" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>LOD-DIENST</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VOYAGE_NUMBER" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>LOD-SREISE</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DIRECTION" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>LOD-RICHTG</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="POR_CODE">
+				<xs:annotation>
+					<xs:documentation>LOD-LPLATZ</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="type_NOT_EMPTY_STRING">
+							<xs:attribute name="IS_PORT" type="xs:boolean"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PLD_CODE">
+				<xs:annotation>
+					<xs:documentation>LOD-DPLATZ</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="type_NOT_EMPTY_STRING">
+							<xs:attribute name="IS_PORT" type="xs:boolean"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BL_NUMBER" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>LOD-BLNR</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_LODREST">
+		<xs:sequence>
+			<xs:element name="BL_VERSION_NO" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>LOD-VERSION</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CREATION_DATE" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>LOD-DATUM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TECH_VOYAGE_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>LOD-REISE4</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_TXTA">
+		<xs:sequence>
+			<xs:element name="TXTA-DATEN">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SFC_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>TXTA-SFCKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT_FIELD_COUNT" type="xs:integer">
+							<xs:annotation>
+								<xs:documentation>TXTA-ANZTXT</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TXTA-TEXT">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TEXT1_1" type="type_NOT_EMPTY_STRING">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_1</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_1" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_1</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT1_2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_2</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_2</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT1_3" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_3</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_3" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_3</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT1_4" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_4</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_4" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_4</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT1_5" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_5</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_5" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_5</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT1_6" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_6</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_6" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_6</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT1_7" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_7</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_7" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_7</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT1_8" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_8</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_8" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_8</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT1_9" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_9</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_9" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_9</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT1_10" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT1_10</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TEXT2_10" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4TXTA-TEXT2_10</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TXT_FIELD_NO" type="type_NOT_EMPTY_STRING">
+							<xs:annotation>
+								<xs:documentation>TXT-FELDNR</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDFA">
+		<xs:sequence>
+			<xs:element name="EDFA-SEGMENT">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SEGMENT_GROUP" type="type_NOT_EMPTY_STRING">
+							<xs:annotation>
+								<xs:documentation>4EDFA-SEG-GROUP</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="SEGMENT_NAME" type="type_NOT_EMPTY_STRING">
+							<xs:annotation>
+								<xs:documentation>4EDFA-SEG-NAME</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="QUALIFIER" type="type_NOT_EMPTY_STRING">
+							<xs:annotation>
+								<xs:documentation>4EDFA-QUAL</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ELEMENT_NUMBER" type="type_NOT_EMPTY_STRING">
+							<xs:annotation>
+								<xs:documentation>4EDFA-ELEM-NO</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="LEVEL" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-LEVEL</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="QUALIFIER_INDEX" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-QUAIND</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ELEMENT_INDEX" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-ELEIDX</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ELEMENT_SEQUENCE" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-ELEM-SEQU</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EDFA-EDFDATEN">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="E_DATE" type="xs:date" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-EDATUM</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="G_DATE" type="xs:date" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-GDATUM</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="FORMAT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-FORMAT</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="BEFORE" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-BEFORE</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="BEHIND" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-BEHIND</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="LENGTH" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-LENGTHA</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ALPHA1" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-ALPHA1</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ALPHA2" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4EDFA-ALPHA2</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ALPHA_REC" type="xs:integer">
+							<xs:annotation>
+								<xs:documentation>4EDFA-ALPHA-REC</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ALPHA_MAX" type="xs:integer">
+							<xs:annotation>
+								<xs:documentation>4EDFA-ALPHA-MAX</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_BLZA">
+		<xs:sequence>
+			<xs:element name="BLZA-DATEN" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="REV_DED_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-CODE</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="REV_DED_SHORTNAME" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-KTEXT</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="REV_DED_TYPE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-TYPKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CALC_BASE_INDICATOR" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-BASKZ-0</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CALCULATION_RULE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-REGELKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="RATE" type="xs:decimal" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-RATE</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="BZGMNG_PER_UNIT" type="xs:decimal" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-BZGMNG</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="UNIT_CODE_FREIGHTBASE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-ME</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BLZA-PRTCTRL" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="IS_PRINTCTRL_BL" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-BLKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_PRINTCTRL_MANIFEST" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-MNFKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_PRINTCTRL_INVOICE" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-FKTKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_PRINTCTRL_STATISTIC" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-STAKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_PRINTCTRL_UNLOAD" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-FILLER5</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_PRINTCTRL_RESERVE" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-FILLER6</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BLZA-BEIKZ" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="IS_NETFREIGHT_POINTER" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBEIKZ1</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_OCEANFREIGHT_POINTER" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBEIKZ2</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_BASE3_POINTER" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBEIKZ3</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_BASE4_POINTER" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBEIKZ4</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_BASE5_POINTER" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBEIKZ5</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_BASE6_POINTER" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBEIKZ6</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BLZA-BASKZ" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="IS_REV_DET_BASED_ON_POINTER1" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBASKZ1</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_REV_DET_BASED_ON_POINTER2" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBASKZ2</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_REV_DET_BASED_ON_POINTER3" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBASKZ3</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_REV_DET_BASED_ON_POINTER4" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBASKZ4</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_REV_DET_BASED_ON_POINTER5" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBASKZ5</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_REV_DET_BASED_ON_POINTER6" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBASKZ6</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_REV_DET_BASED_ON_VALUE_INPUT" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>4BLZA-TBASKZ7</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BLZA-REST" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CONT_FACTOR" type="xs:decimal" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-FAKTOR</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="BASE_CALC" type="xs:decimal" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-MENGE</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="YELLOW_MANUAL_CODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-YMCODE</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CALCULATED_VALUE" type="xs:decimal" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-BETRAG</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="PAYCODE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-ZHLB</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="PLACE_OF_PAYMENT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-ZHLBHFN</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TARIFF_CURRENCY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-TRFWHRG</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ACCOUNT_CURRENCY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-ACWHRG</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="EXCHANGE_RATE1" type="xs:decimal" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-KURS</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="REV_DED_CURRENCY" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-RDWHRG</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="EXCHANGE_RATE2" type="xs:decimal" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-RDKURS</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CUSTOMER" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-KUNDE</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="LINE_NO_OF_SCREEN" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-ZEILE</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="MASTERFILE_REC_VERSION" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-MASVERSION</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="MASTERFILE_KEY_MARK" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-KEYKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ROUNDING_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-RUNDKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="INVOICE_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-FKTNR</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="FREIGHT_TON_MARK" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-FRTTNM</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="GEN_SIGN" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-GENKZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ICMS_PCT" type="xs:decimal" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-ICMSPZ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="BOLETO_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-BOLETONO</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CHARGE_GEN_STATION" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>3BLZA-GENSTA</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_SFC_SELFBILLER" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>BLZA-D806-SELFYN</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="IS_RDC_SELFBILLER" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>BLZA-SELFYN</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="RDC_BTW_CODE" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>BLZA-BTWCOD</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="RDC_BTW_MARK" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>BLZA-BTWMARK</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="RDC_BTW_TEXT" type="type_NOT_EMPTY_STRING" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>BLZA-BTWDRU</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="RDC_YM_SUB_CODE" type="xs:integer" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>BLZA-YMCSUB</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_WTABKEY">
+		<xs:sequence>
+			<xs:element name="COMPANY" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>D1x4-FIRMA</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PORT_SIGN" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>D1x4-OPERTN</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PORT_CODE" type="type_NOT_EMPTY_STRING">
+				<xs:annotation>
+					<xs:documentation>D1x4-HAFEN</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VERSION" type="xs:integer">
+				<xs:annotation>
+					<xs:documentation>D1x4-VERSION</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CREATION_DATE" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>D1x4-EDATUM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VALID_FROM_DATE" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>D1x4-GDATUM</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

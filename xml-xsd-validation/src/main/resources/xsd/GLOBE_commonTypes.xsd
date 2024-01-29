@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mit XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) von MSCHWENKE (computer & competence GmbH) bearbeitet -->
+<!--Created with Liquid XML Studio 6.1.17.0 - FREE Community Edition (http://www.liquid-technologies.com)-->
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by Hamburg Süd KG (Hamburg Südamerikanische Dampfschifffahrtsgesellschaft KG) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="type_NOT_EMPTY_STRING">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_CODE">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_ID_SEQNO">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+	<xs:simpleType name="type_POSITIVE_INTEGER">
+		<xs:annotation>
+			<xs:documentation>Including zero</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_POSITIVE_DECIMAL">
+		<xs:annotation>
+			<xs:documentation>Including zero</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_CURRENCY_CODE">
+		<xs:restriction base="type_NOT_EMPTY_STRING">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_EQUIPMENT_NO">
+		<xs:restriction base="type_NOT_EMPTY_STRING">
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_UNLOCODE">
+		<xs:restriction base="type_NOT_EMPTY_STRING">
+			<xs:length value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_LANGUAGE_ID">
+		<xs:restriction base="type_NOT_EMPTY_STRING">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_IMO_NO">
+		<xs:restriction base="type_POSITIVE_INTEGER">
+			<xs:totalDigits value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_VOYAGE_NO">
+		<xs:restriction base="type_POSITIVE_INTEGER">
+			<xs:totalDigits value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_BOOKING_NO">
+		<xs:restriction base="type_NOT_EMPTY_STRING">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_DIRECTION">
+		<xs:annotation>
+			<xs:documentation>ENUM Name SE00189 DIRECTION_TARIFS</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_UOM">
+		<xs:restriction base="type_NOT_EMPTY_STRING">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_FLAG">
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_FLAG_YN">
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+			<xs:pattern value="[YN]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_COUNTRY_CODE">
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_TAPU_TARIFF_NO">
+		<xs:annotation>
+			<xs:documentation>Numbers 001 - 999 and N/A</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_SERVICE_TYPE">
+		<xs:annotation>
+			<xs:documentation>Enum Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_TRANSPORT_MODE">
+		<xs:annotation>
+			<xs:documentation>Ennum Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_EQ_SIZE">
+		<xs:annotation>
+			<xs:documentation>Enum Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_EQ_TYPE">
+		<xs:annotation>
+			<xs:documentation>Enum Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_EXT_EQ_GROUP">
+		<xs:annotation>
+			<xs:documentation>Enum Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_CURRENCY_AMOUNT">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="14"/>
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_ERROR_CODE">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_ERROR_TEXT">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="type_BRAND">
+		<xs:annotation>
+			<xs:documentation>ENUM Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_CARGO_TYPE">
+		<xs:annotation>
+			<xs:documentation>ENUM Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_CHARGE_CODE">
+		<xs:annotation>
+			<xs:documentation>ENUM Name</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_DAYS_TYPE">
+		<xs:annotation>
+			<xs:documentation>ENUM Name SE00544</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_BASIS_SURCHARGES">
+		<xs:annotation>
+			<xs:documentation>ENUM Name SE00058</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_DND_TARIFF_TYPE">
+		<xs:annotation>
+			<xs:documentation>ENUM Name SE00203 Detention, Demurrage, Storage ...</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="25"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_OWNERSHIP_TYPE">
+		<xs:annotation>
+			<xs:documentation>ENUM Name SE00468 SOC, COC</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_SHIPMENT_TYPE">
+		<xs:annotation>
+			<xs:documentation>ENUM Name SE00459</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="25"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_CHARGE_TYPE">
+		<xs:annotation>
+			<xs:documentation>ENUM Name, OF, TC, LS, not RCC-codes!</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_GEO_SCOPE_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_FACILITY_CODE">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_WEIGHT_CLASS">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_BASIS_GROUP">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="type_EFFECTIVE_EXPIRY_DATE">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="type_NAME">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="45"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="type_STOWAGE_POSITION">
+		<xs:simpleContent>
+			<xs:extension base="type_NOT_EMPTY_STRING">
+				<xs:attribute name="FORMAT" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>To indicate which format is used. Valid codes are: "ISO" (ISO-format), "RoRo" (Ro/Ro-format, assigned by the Carrier) or "ZZZ" (non-ISO-format, mutually defined).</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="type_LEGAL_AMENDMENT_CODE">
+		<xs:annotation>
+			<xs:documentation>ENUM Name SE00680</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="type_GLOBE_COMPASS_HAZARDOUS_GOODS">
+		<xs:annotation>
+			<xs:documentation>Hazardous sub structure valid for COMPASS</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PROPER_SHIPPING_NAME" type="type_NOT_EMPTY_STRING" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ17</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HAZARDOUS_SEQ_NO" type="type_POSITIVE_INTEGER">
+				<xs:annotation>
+					<xs:documentation>IHZ18</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WASTE" type="type_FLAG_YN">
+				<xs:annotation>
+					<xs:documentation>IHZ19</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="APPROVAL_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ20</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RADIOACTIVITY" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ29</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:fractionDigits value="2"/>
+						<xs:totalDigits value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RADIOACTIVITY_UNIT" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ30</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="POWDER_WEIGHT" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ33</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="6"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="POWDER_WEIGHT_UNIT" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ34</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="HAZARDOUS_ZONE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ46</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CLASS7_SCHEDULE" type="type_POSITIVE_INTEGER" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ47</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="GOVERNMENT_APPROVAL_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ77</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EXPLOSIVE" type="type_FLAG_YN">
+				<xs:annotation>
+					<xs:documentation>IHZ49</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AUTHORITY_EXCEMPTION" type="type_FLAG_YN">
+				<xs:annotation>
+					<xs:documentation>IHZ50</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TEMP_REQUESTED" type="type_EDI_HAZ_TEMPERATURE" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ54 or IRD06+07</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TEMP_CONTROL" type="type_EDI_HAZ_TEMPERATURE" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ55</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TEMP_EMERGENCY" type="type_EDI_HAZ_TEMPERATURE" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ56</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EXCEPTED_QUANITY" type="type_FLAG_YN">
+				<xs:annotation>
+					<xs:documentation>IHZ63</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="VARIANT" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>IHZ72</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SEGREGATION_GROUP" minOccurs="0" maxOccurs="4">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="NO" type="type_NOT_EMPTY_STRING"/>
+						<xs:element name="DESCRIPTION" type="type_NOT_EMPTY_STRING"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="IMDG_COMMODITY" type="type_EDI_HAZ_IMDG_COMMODITY"/>
+			<xs:element name="GOODS_ITEM_DETAILS" type="type_EDI_HAZ_GOODS_ITEM_DETAILS"/>
+			<xs:element name="IS_IMJO_APPROVED" type="type_FLAG_YN" minOccurs="0"/>
+			<xs:element name="DGR_ITEM_NO" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="type_POSITIVE_INTEGER">
+						<xs:maxInclusive value="99"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EQ_LINE_ITEM_NO" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDI_HAZ_TEMPERATURE">
+		<xs:annotation>
+			<xs:documentation>For EDIFACT segment(s): DGS, RNG, TMP</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="REQUIRED_TEMP" type="xs:double" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Requested temperature without unit.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDI_HAZ_IMDG_COMMODITY">
+		<xs:annotation>
+			<xs:documentation>For EDIFACT segment(s): DGS.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IMO_CLASS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ04</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="UN_NUMBER">
+				<xs:annotation>
+					<xs:documentation>Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ06</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FLASHPOINT" type="xs:double" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Flashpoint of the Dangerous Good
+
+Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ11</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FLASHPOINT_UNIT" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Unit of the flashpoint.
+C	CELSIUS
+F	FAHRENHEIT
+See SE00492
+
+Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ12</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PACKING_GROUP" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Identification of a packing group by code.
+I          Great danger 
+II         Medium danger
+III        Minor dangr
+See SE00372
+
+
+Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ23</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="300"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EMS_FIRE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>EMS or Emergency Schedule Page for Fire (leakages). 
+
+Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ15</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="EMS_SPILLAGES" type="type_NOT_EMPTY_STRING" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation> EMS or Emergency Schedule Page for Spillages (leakages). 
+
+Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ57</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AMENDMENT_NO" type="type_NOT_EMPTY_STRING" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ58</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SUB_RISK1" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ14</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SUB_RISK2" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Old Inhouseformat: Compass_Internal_Structure_Booking.xls, Segment IHZ52</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MEASUREMENTS" type="type_EDI_HAZ_MEASUREMENT" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For DGS.MEA segment</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DGR_INFORMATIONS" type="type_EDI_HAZ_DGR_INFORMATIONS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For EDIFACT DGS.FTX</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EMERGENCY_DG_CONTACT" type="type_EDI_HAZ_CONTACT_DETAIL" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDI_HAZ_GOODS_ITEM_DETAILS">
+		<xs:annotation>
+			<xs:documentation>For EDIFACT segment(s): GID</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OUTER_PACKING_TYPE" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OUTER_PACKING_PIECES" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Number of outer packages over all equipments.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="INNER_PACKING_TYPE" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="INNER_PACKING_PIECES" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="8"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OUTER_PACKING_TYPE_CODE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Two-character UN/ECE recommendation 21, revision 4 package code, or ISO Code</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING"/>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="INNER_PACKING_TYPE_CODE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Two-character UN/ECE recommendation 21, revision 4 package code or ISO Codee</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING"/>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDI_HAZ_MEASUREMENT">
+		<xs:annotation>
+			<xs:documentation>For EDIFACT segment(s): MEA</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NET_WEIGHT" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Weight without packaging.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="8"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="GROSS_WEIGHT" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Weight with packaging and without carriers equipment.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="8"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="VOLUME" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:totalDigits value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDI_HAZ_DGR_INFORMATIONS">
+		<xs:annotation>
+			<xs:documentation>For EDIFACT segment(s): DGS.,FTX</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MARINE_POLLUTANT" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Type of marine pollutant.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="type_NOT_EMPTY_STRING">
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TECHNICAL_NAME" type="xs:string" minOccurs="0"/>
+			<xs:element name="MATERIAL_STATE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Material state:
+S	SOLID
+L	LIQUID
+G	GAS
+V	VISCOUS
+A	AMMUNITION
+E	EXPLOSIVE</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IS_LIMITED_QUANTITY" type="type_FLAG_YN" minOccurs="0"/>
+			<xs:element name="IS_REPORTABLE_QUANTITY" type="type_FLAG_YN" minOccurs="0"/>
+			<xs:element name="MANIFEST_REMARK" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+			<xs:element name="INTERNAL_REMARK" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+			<xs:element name="IS_EMPTY_UNCLEANED" type="type_FLAG_YN" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDI_HAZ_CONTACT_DETAIL">
+		<xs:annotation>
+			<xs:documentation>For EDIFACT segment(s): COM, CTA</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CONTACT_NAME" type="type_NOT_EMPTY_STRING" minOccurs="0"/>
+			<xs:element name="COMM_DETAILS" type="type_EDI_HAZ_COMM_DETAIL" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDI_HAZ_COMM_DETAIL">
+		<xs:annotation>
+			<xs:documentation>For EDIFACT segment(s): COM</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TELEPHONE" type="type_NOT_EMPTY_STRING" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>(See EDIFACT Data Element 3155)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDI_ACTIVITY_TIME">
+		<xs:annotation>
+			<xs:documentation>For EDIFACT segment(s): DTM. 
+Specifies a start/end date or a duration as well as the reason for an activity, a pause or a delay.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BEGIN" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Begin of an activity, pause or delay</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="END" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>End of an activity, pause or delay</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DURATION" type="xs:duration" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Duration of an activity, pause or delay, e.g.
+"PT01H30M10S" = 1 hour, 30 minutes, 10 seconds
+"P2DT6H" = 2 days, 6 hours
+"P1Y2M3DT10H30M40S" = 1 year, 2 months, 3 days, 10 hours, 30 minutes, 40 seconds</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REASON_CODE" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Code to identify the reason of an activity, pause or delay</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ADDITIONAL_REASON_CODE" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Additional code to identify the reason of an activity, pause or delay</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="REASON_DESCRIPTION" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Description of the activity, pause or delay</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="type_EDI_GEO_ENTITY_CODED">
+		<xs:annotation>
+			<xs:documentation>For EDIFACT segment(s): LOC</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CODE" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Primary code to identify the geographical entity. Can be the UNLOCODE, SMDG Terminal Code, an internal code, etc., depending on the context and the agreement between the involved parties.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ADDITIONAL_CODE" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Additional code to identify the geographical entity.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="NAME" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Name of the geographical entity.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="TYPE" use="required">
+			<xs:annotation>
+				<xs:documentation>4-letter code to specify the geographical entity type:
+"BRTH"=Berth
+"DEPO"=Deopt
+"FACI"=Facility
+"PORT"=Port
+"TERM"=Terminal
+...
+Add codes as required!</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="KeyValueType">
+		<xs:sequence>
+			<xs:element name="KEY" type="xs:string"/>
+			<xs:element name="VALUE" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+</xs:schema>

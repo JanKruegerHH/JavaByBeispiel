@@ -17,6 +17,8 @@
         <module>streams</module>
         <module>vertx-angular1</module>
         <module>vertx-angular5-springboot</module>
+        <module>xml-xsd-validation</module>
+        <module>tennis-kata</module>
     </modules>
 
     <properties>
